@@ -9,7 +9,7 @@ type CardProps = {
 const CardDesign = ({ icon:Icon, title, description }: CardProps) => {
   return (
     <>
-      <div className="bg-gray-950 p-6 rounded-lg shadow-xl text-center ">
+      <div className="bg-[#333333] p-6 rounded-lg shadow-xl text-center ">
         <div className="mb-4">
         <Icon className="w-12 h-12 mx-auto text-greenTouch" />
         </div>

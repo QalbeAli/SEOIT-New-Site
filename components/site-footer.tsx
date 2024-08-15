@@ -76,13 +76,13 @@ export function SiteFooter() {
             <Link href="/" className="flex items-center gap-1">
               <Image
                 src="/logo.png"
-                className="h-16 w-16 invert text-primary"
+                className="h-24 w-24  invert text-primary"
                 alt="Logo"
                 width={96}
                 height={96}
               />
-              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-                SEO IT
+              <span className="self-center font-bold text-4xl whitespace-nowrap dark:text-white">
+                SEOIT
               </span>
             </Link>
             <p className="max-w-xs">All Your It Services In One Platform</p>

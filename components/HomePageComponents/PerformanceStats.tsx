@@ -2,7 +2,7 @@ import NumberTicker from "@/components/magicui/number-ticker";
 const PerformanceStats = () => {
     return (
       <div className="p-4 sm:p-10 lg:p-20 flex items-center justify-center">
-        <div className="max-w-6xl w-full bg-gray-950 rounded-lg space-y-8 sm:space-y-12 shadow-2xl overflow-hidden p-6 sm:p-12 lg:p-20 text-center">
+        <div className="max-w-6xl w-full bg-[#333333] rounded-lg space-y-8 sm:space-y-12 shadow-2xl overflow-hidden p-6 sm:p-12 lg:p-20 text-center">
           <h4 className="text-white font-bold text-lg sm:text-xl uppercase tracking-wide">
             High Impact Results
           </h4>

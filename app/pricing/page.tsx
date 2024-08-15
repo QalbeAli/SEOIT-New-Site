@@ -1,8 +1,6 @@
 "use client";
 import PricingSection from "@/components/landing/pricing-section";
 import FaqDropdown from "@/components/PricingPageComponent/FaqDropdown";
-import PricingCard from "@/components/PricingPageComponent/PricingCard";
-import PricingPlans from "@/components/PricingPageComponent/PricingPlans";
 import Reviews from "@/components/PricingPageComponent/Review";
 import React from "react";
 

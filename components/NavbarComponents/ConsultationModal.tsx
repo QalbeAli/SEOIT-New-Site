@@ -32,7 +32,7 @@ const ConsultationModal: FC<ConsultationModalProps> = ({ isOpen, onClose }) => {
       onClick={handleOuterClick}
     >
       <div
-        className="bg-white rounded-lg overflow-hidden shadow-lg max-w-3xl w-full h-auto"
+        className="bg-[#333333] rounded-lg overflow-hidden shadow-lg max-w-3xl w-full h-auto"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex">
@@ -65,7 +65,7 @@ const ConsultationModal: FC<ConsultationModalProps> = ({ isOpen, onClose }) => {
               <button
                 className={`text-lg font-semibold pb-2 border-b-2 ${
                   activeTab === "questions"
-                    ? "border-blue-600 text-blue-600"
+                    ? "border-lime-300 text-greenTouch"
                     : "border-transparent text-gray-400"
                 }`}
                 onClick={() => setActiveTab("questions")}
@@ -75,7 +75,7 @@ const ConsultationModal: FC<ConsultationModalProps> = ({ isOpen, onClose }) => {
               <button
                 className={`text-lg font-semibold pb-2 border-b-2 ${
                   activeTab === "information"
-                    ? "border-blue-600 text-blue-600"
+                    ? "border-lime-300 text-greenTouch"
                     : "border-transparent text-gray-400"
                 }`}
                 onClick={() => setActiveTab("information")}
@@ -87,13 +87,13 @@ const ConsultationModal: FC<ConsultationModalProps> = ({ isOpen, onClose }) => {
               {activeTab === "questions" && (
                 <>
                   <h2 className="text-2xl font-semibold mb-4">Get in Touch</h2>
-                  <p className="mb-4 text-gray-600">
+                  <p className="mb-4 text-white">
                     Any questions or remarks? We&apos;ll get back to you within 24
                     hours.
                   </p>
                   <form className="space-y-4 flex-1 flex flex-col">
                     <div className="flex items-center bg-gray-100 p-4 rounded-lg shadow-md">
-                      <UserIcon className="h-5 w-5 text-blue-500 mr-3" />
+                      <UserIcon className="h-5 w-5 text-lime-400 mr-3" />
                       <input
                         type="text"
                         placeholder="Full Name"
@@ -101,7 +101,7 @@ const ConsultationModal: FC<ConsultationModalProps> = ({ isOpen, onClose }) => {
                       />
                     </div>
                     <div className="flex items-center bg-gray-100 p-4 rounded-lg shadow-md">
-                      <MailIcon className="h-5 w-5 text-blue-500 mr-3" />
+                      <MailIcon className="h-5 w-5 text-lime-400 mr-3" />
                       <input
                         type="email"
                         placeholder="Email Address"
@@ -122,7 +122,7 @@ const ConsultationModal: FC<ConsultationModalProps> = ({ isOpen, onClose }) => {
                     ></textarea>
                     <button
                       type="submit"
-                      className="w-full bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600"
+                      className="w-full bg-lime-200 text-black font-bold py-2 rounded-lg hover:bg-lime-300"
                     >
                       Send Message
                     </button>
@@ -134,23 +134,23 @@ const ConsultationModal: FC<ConsultationModalProps> = ({ isOpen, onClose }) => {
                   <h2 className="text-2xl font-semibold mb-4 text-center">
                     Contact Details
                   </h2>
-                  <p className="mb-4 text-gray-600 text-center">
+                  <p className="mb-4 text-white text-center">
                     Have some feedback for us?
                   </p>
-                  <p className="mb-4 text-gray-600 text-center">
+                  <p className="mb-4 text-white text-center">
                     Give us a call or send an email.
                   </p>
                   <div className="space-y-4 flex-1">
-                    <div className="flex items-center text-gray-700">
-                      <PhoneIcon className="h-5 w-5 text-blue-500 mr-3" />
+                    <div className="flex items-center text-white">
+                      <PhoneIcon className="h-5 w-5 text-greenTouch mr-3" />
                       <span>+123 (4567) 8910</span>
                     </div>
-                    <div className="flex items-center text-gray-700">
-                      <MailIcon className="h-5 w-5 text-blue-500 mr-3" />
+                    <div className="flex items-center text-white">
+                      <MailIcon className="h-5 w-5 text-greenTouch mr-3" />
                       <span>hello@example.com</span>
                     </div>
-                    <div className="flex items-center text-gray-700">
-                      <LocationMarkerIcon className="h-5 w-5 text-blue-500 mr-3" />
+                    <div className="flex items-center text-white">
+                      <LocationMarkerIcon className="h-5 w-5 text-greenTouch mr-3" />
                       <span>120 Street Lorem Ipsum Sit Amet</span>
                     </div>
                   </div>

@@ -17,13 +17,13 @@ const FaqItem = ({ question, answer }: PropsType) => {
 
   return (
     <>
-      <div className=" mx-auto w-full bg-gray-950 max-w-4xl rounded-2xl shadow-md p-4 my-4">
+      <div className=" mx-auto w-full bg-[#333333] max-w-4xl rounded-2xl shadow-md p-4 my-4">
         <div
           className="flex items-center justify-between cursor-pointer"
           onClick={toggleDropdown}
         >
           <div className="flex items-center">
-            <FiFileText className="text-blue-500 mr-2" size={24} />
+            <FiFileText className="text-lime-300 mr-2" size={24} />
             <h3 className="font-normal text-lg">{question}</h3>
           </div>
           <div>

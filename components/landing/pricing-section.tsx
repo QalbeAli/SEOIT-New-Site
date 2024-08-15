@@ -6,13 +6,15 @@ import { cn } from "@/lib/utils";
 import { CheckIcon } from "@radix-ui/react-icons";
 import { motion } from "framer-motion";
 import { Loader } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation"; // Import useRouter for navigation
 
 type Interval = "month" | "year";
 
 export const toHumanPrice = (price: number, decimals: number = 2) => {
-  return Number(price / 100).toFixed(decimals);
+  return Number(price / 1).toFixed(decimals);
 };
+
 const demoPrices = [
   {
     id: "price_1",
@@ -24,8 +26,8 @@ const demoPrices = [
       "5 projects limit",
       "Access to basic AI tools",
     ],
-    monthlyPrice: 1000,
-    yearlyPrice: 10000,
+    monthlyPrice: 100,
+    yearlyPrice: 1200,
     isMostPopular: false,
   },
   {
@@ -39,8 +41,8 @@ const demoPrices = [
       "Access to all AI tools",
       "Custom integrations",
     ],
-    monthlyPrice: 2000,
-    yearlyPrice: 20000,
+    monthlyPrice: 200,
+    yearlyPrice: 2400,
     isMostPopular: true,
   },
   {
@@ -56,8 +58,8 @@ const demoPrices = [
       "Custom integrations",
       "Data security and compliance",
     ],
-    monthlyPrice: 5000,
-    yearlyPrice: 50000,
+    monthlyPrice: 300,
+    yearlyPrice: 3600,
     isMostPopular: false,
   },
   {
@@ -72,8 +74,8 @@ const demoPrices = [
       "Custom integrations",
       "Highest data security and compliance",
     ],
-    monthlyPrice: 8000,
-    yearlyPrice: 80000,
+    monthlyPrice: 500,
+    yearlyPrice: 6000,
     isMostPopular: false,
   },
 ];
@@ -83,22 +85,37 @@ export default function PricingSection() {
   const [isLoading, setIsLoading] = useState(false);
   const [id, setId] = useState<string | null>(null);
 
-  const onSubscribeClick = async (priceId: string) => {
+  const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
+  const [selectedPrice, setSelectedPrice] = useState<number>(0);
+  const router = useRouter();
+
+  useEffect(() => {
+    if (selectedPlan && selectedPrice > 0) {
+      router.push(`/checkout?plan=${selectedPlan}&price=${selectedPrice}`);
+    } else if (selectedPrice <= 0 && selectedPlan) {
+      console.error("Invalid price. Please refresh the page and try again.");
+    }
+  }, [selectedPlan, selectedPrice, router]);
+
+  const onSubscribeClick = async (priceId: string, price: number) => {
     setIsLoading(true);
     setId(priceId);
-    await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate a delay
+    
+    // Simulate a delay for demonstration purposes
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
+    // Set the selected plan and price, which will trigger the useEffect to navigate
+    setSelectedPlan(priceId);
+    setSelectedPrice(price);
+
     setIsLoading(false);
   };
 
   return (
-    <section id="pricing">
+    <section id="pricing" className="my-20">
       <div className="mx-auto flex max-w-screen-xl flex-col gap-8 px-4 py-14 md:px-8">
         <div className="mx-auto max-w-5xl text-center">
-          <h4 className="text-xl font-bold tracking-tight text-black dark:text-white">
-            Pricing
-          </h4>
-
-          <h2 className="text-5xl font-bold tracking-tight text-black dark:text-white sm:text-6xl">
+          <h2 className="text-5xl font-bold py-10 tracking-tight text-black dark:text-white sm:text-6xl">
             Simple pricing for everyone.
           </h2>
 
@@ -132,7 +149,7 @@ export default function PricingSection() {
                   "border-2 border-[var(--color-four)] dark:border-[var(--color-four)]":
                     price.isMostPopular,
                 }
-              )}  
+              )}
             >
               <div className="flex items-center">
                 <div className="ml-4">
@@ -181,7 +198,7 @@ export default function PricingSection() {
                   "transform-gpu ring-offset-current transition-all duration-300 ease-out hover:ring-2 hover:ring-primary hover:ring-offset-2"
                 )}
                 disabled={isLoading}
-                onClick={() => void onSubscribeClick(price.id)}
+                onClick={() => void onSubscribeClick(price.id, interval === "year" ? price.yearlyPrice : price.monthlyPrice)}
               >
                 <span className="absolute right-0 -mt-12 h-32 w-8 translate-x-12 rotate-12 transform-gpu bg-white opacity-10 transition-all duration-1000 ease-out group-hover:-translate-x-96 dark:bg-black" />
                 {(!isLoading || (isLoading && id !== price.id)) && (

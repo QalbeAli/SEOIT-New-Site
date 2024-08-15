@@ -25,6 +25,10 @@ const config = {
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
       },
+      boxShadow: {
+        input: `0px 2px 3px -1px rgba(0,0,0,0.1), 0px 1px 0px 0px rgba(25,28,33,0.02), 0px 0px 0px 1px rgba(25,28,33,0.08)`,
+      },
+      
       colors: {
         greenTouch:"#d6fcb5",
         border: "hsl(var(--border))",
@@ -129,6 +133,7 @@ const config = {
         marquee: "marquee var(--duration) infinite linear",
         "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
       },
+      
     },
   },
   plugins: [require("tailwindcss-animate"), addVariablesForColors],

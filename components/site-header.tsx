@@ -8,6 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import ConsultationModal from "@/components/NavbarComponents/ConsultationModal";
+import { ContactUsModal } from "@/components/NavbarComponents/ContactUsModal";
 
 const menuItem = [
   {
@@ -120,39 +121,45 @@ export function SiteHeader() {
   return (
     <>
       <header className="fixed left-0 top-0 z-50 w-full border-b backdrop-blur-[12px]">
-        <div className="container flex h-[3.5rem] items-center justify-between px-4 md:px-8">
+        <div className="container flex h-[6rem] items-center justify-between px-4 md:px-8">
           <Link className="text-md font-bold flex items-center" href="/">
-            <Image src="/logo.png" alt="MainLogo" width={48} height={48} className="text-white invert" />
-            SEOIT
+            <Image
+              src="/logo.png"
+              alt="MainLogo"
+              width={96}
+              height={96}
+              className="text-white invert"
+            />
+            <div className="text-4xl">SEOIT</div>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex ml-auto items-center">
-            <Link className="mr-6 text-lg" href="/">
+            <Link className="mr-6 text-2xl" href="/">
               Home
             </Link>
-            <Link className="mr-6 text-lg" href="/about">
+            <Link className="mr-6 text-2xl" href="/about">
               About
             </Link>
-            <Link className="mr-6 text-lg" href="/services">
+            <Link className="mr-6 text-2xl" href="/services">
               Services
             </Link>
-            <Link className="mr-6 text-lg" href="/pricing">
+            <Link className="mr-6 text-2xl" href="/pricing">
               Pricing
             </Link>
-            <Link className="mr-6 text-lg" href="/blogs">
+            <Link className="mr-6 text-2xl" href="/blogs">
               Blogs
             </Link>
-            <Link className="mr-6 text-lg" href="/reviews">
+            <Link className="mr-6 text-2xl" href="/reviews">
               Reviews
             </Link>
             <button
               className={cn(
                 buttonVariants({ variant: "secondary" }),
-                "text-lg"
+                "text-2xl"
               )}
               onClick={() => {
-                closeMenu(); 
+                closeMenu();
                 setIsModalOpen(true);
               }}
             >
