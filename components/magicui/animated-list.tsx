@@ -28,7 +28,7 @@ export const AnimatedList = React.memo(
     );
 
     return (
-      <div className={`flex flex-col items-center gap-4 ${className}`}>
+      <div className={`flex  ml-72 md:ml-0 flex-col items-center gap-4 ${className}`}>
         <AnimatePresence>
           {itemsToShow.map((item) => (
             <AnimatedListItem key={(item as ReactElement).key}>

@@ -9,7 +9,7 @@ export function ServiceHeroAnimation() {
         
       <ContainerScroll
         titleComponent={
-          <div className="py-10">
+          <div className="mt-24">
             <h1 className="text-4xl font-semibold text-white ">
             We change the way you
             build  <br />

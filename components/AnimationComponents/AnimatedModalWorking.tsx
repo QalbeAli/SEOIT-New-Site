@@ -21,18 +21,12 @@ export function AnimatedModalWorking() {
     "https://images.unsplash.com/photo-1546484475-7f7bd55792da?q=80&w=2581&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   ];
   return (
-    <div className=" z-1000  flex items-center justify-center">
+    <div className=" z-1000  flex items-center justify-center ">
       <Modal>
-        
-        <ModalTrigger className="bg-greenTouch   dark:text-black text-black flex justify-center group/modal-btn">
-        <HoverBorderGradient
-        className=""
-      >
-        <span className="p-2">Audit Now</span>
-      </HoverBorderGradient>
-        
+        <ModalTrigger className="bg-black dark:text-black text-white flex justify-center group/modal-btn">
+        <span className="text-white">Audit Now</span>
         </ModalTrigger>
-        <ModalBody>
+        <ModalBody className="mt-12">
           <ModalContent>
             <h4 className="text-lg md:text-2xl text-neutral-600 dark:text-neutral-100 font-bold text-center mb-8">
               Audit Your Website With{" "}

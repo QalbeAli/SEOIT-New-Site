@@ -39,7 +39,7 @@ export function AnimatedBeamDemo() {
       className="relative flex h-[500px] w-full items-center justify-center overflow-hidden rounded-lg border bg-background p-10 md:shadow-xl"
       ref={containerRef}
     >
-      <div className="flex size-full flex-col max-w-lg max-h-[200px] items-stretch justify-between gap-10">
+      <div className="flex size-full flex-col max-w-lg max-h-[200px]  mb-40 items-stretch justify-between gap-10">
         <div className="flex flex-row items-center justify-between">
           <Circle ref={div1Ref}>
             <Icons.googleDrive />

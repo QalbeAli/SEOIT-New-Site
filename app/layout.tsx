@@ -35,8 +35,8 @@ export default function RootLayout({
           defaultTheme="dark"
           disableTransitionOnChange
         >
-          <SiteHeader />
-          {/* <NavbarDemo /> */}
+          {/* <SiteHeader /> */}
+          <NavbarDemo />
           {children}
           <SiteFooter />
 

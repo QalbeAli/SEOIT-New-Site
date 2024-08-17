@@ -1,3 +1,4 @@
+import { AnimatedGradientTextDemo } from "@/components/AnimationComponents/AnimatedGradientTextDemo";
 import { BentoDemo } from "@/components/AnimationComponents/BentoDemo";
 import { InfiniteMovingCardsDemo } from "@/components/AnimationComponents/InfiniteMovingCardsDemo";
 import { TabsDemo } from "@/components/AnimationComponents/TabsDemo";
@@ -21,6 +22,7 @@ import { SphereMask } from "@/components/magicui/sphere-mask";
 export default async function Page() {
   return (
     <>
+    <AnimatedGradientTextDemo />
       <HeroSection />
       <ClientSection />
       <SphereMask />
