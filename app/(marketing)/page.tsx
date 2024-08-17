@@ -1,3 +1,6 @@
+import { BentoDemo } from "@/components/AnimationComponents/BentoDemo";
+import { InfiniteMovingCardsDemo } from "@/components/AnimationComponents/InfiniteMovingCardsDemo";
+import { TabsDemo } from "@/components/AnimationComponents/TabsDemo";
 import Brand from "@/components/HomePageComponents/Brand";
 import CallToAction from "@/components/HomePageComponents/CallToAction";
 import Competition from "@/components/HomePageComponents/Competition";
@@ -23,7 +26,8 @@ export default async function Page() {
       <SphereMask />
       <Brand />
       <MarketingSection />
-      <MarketingService />
+      {/* <MarketingService /> */}
+      <TabsDemo />
       <Competition />
       <LeadGeneration />
       <PerformanceStats />
@@ -33,6 +37,7 @@ export default async function Page() {
       <InTouch />
       <Testimonials />
       <CallToActionSection />
+      {/* <BentoDemo /> */}
       <Particles
         className="absolute inset-0 -z-10"
         quantity={50}

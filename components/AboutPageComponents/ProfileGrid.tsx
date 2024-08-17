@@ -71,6 +71,7 @@ const TeamGrid: React.FC = () => {
           </div>
         ))}
       </div>
+
     </div>
   );
 };

@@ -5,7 +5,8 @@ import Motto from '@/components/AboutPageComponents/Motto'
 import ProfileGrid from '@/components/AboutPageComponents/ProfileGrid'
 import Team from '@/components/AboutPageComponents/Team'
 import React from 'react'
-
+import { ShootingStars } from "@/components/ui/shooting-stars";
+import { StarsBackground } from "@/components/ui/stars-background";
 const About = () => {
   return (
     <>
@@ -16,6 +17,8 @@ const About = () => {
       <CardGrid />
       <Team />
       <ProfileGrid />
+      <ShootingStars />
+      <StarsBackground />
     </div>
     </>
   )

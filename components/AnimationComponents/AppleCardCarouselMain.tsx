@@ -15,6 +15,7 @@ import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import Image, { ImageProps } from "next/image";
 import { useOutsideClick } from "@/hooks/use-outside-click";
+import ShineBorder from "../magicui/shine-border";
 
 interface CarouselProps {
   items: JSX.Element[];
@@ -93,7 +94,6 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
       <div className="relative w-full">
         <div
           className="flex w-full overflow-x-scroll overscroll-x-auto py-10 md:py-20 scroll-smooth [scrollbar-width:none]"
-          ref={carouselRef}
           onScroll={checkScrollability}
         >
           <div
@@ -104,7 +104,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
 
           <div
             className={cn(
-              "flex flex-row justify-start gap-4 pl-4",
+              "flex flex-row justify-start gap-4 animate-scroll ",
               "max-w-7xl mx-auto" // remove max-w-4xl if you want the carousel to span the full width of its container
             )}
           >
@@ -125,9 +125,14 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
                   },
                 }}
                 key={"card" + index}
-                className="last:pr-[5%] md:last:pr-[33%]  rounded-3xl"
+                className="last:pr-[5%] md:last:pr-[33%]   "
               >
-                {item}
+                <ShineBorder
+                  className=" flex md:h-[600px] w-full flex-col items-center justify-center overflow-hidden rounded-3xl border bg-background md:shadow-xl"
+                  color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
+                >
+                  {item}
+                </ShineBorder>
               </motion.div>
             ))}
           </div>
@@ -196,9 +201,9 @@ export const Card = ({
 
   return (
     <>
-      <AnimatePresence>
+      {/* <AnimatePresence>
         {open && (
-          <div className="fixed inset-0 h-screen z-50 overflow-auto">
+          <div className="fixed inset-0 h-screen z-50 overflow-auto ">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -235,11 +240,10 @@ export const Card = ({
             </motion.div>
           </div>
         )}
-      </AnimatePresence>
-      <motion.button
+      </AnimatePresence> */}
+      <motion.div
         layoutId={layout ? `card-${card.title}` : undefined}
-        onClick={handleOpen}
-        className="rounded-3xl bg-gray-100 dark:bg-neutral-900 h-80 w-56 md:h-[40rem] md:w-96 overflow-hidden flex flex-col items-start justify-start relative z-10"
+        className="rounded-3xl  bg-gray-100 dark:bg-neutral-900 h-80 w-56 md:h-[40rem] md:w-96 overflow-hidden flex flex-col items-start justify-start relative z-10"
       >
         <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none" />
         <div className="relative z-40 p-8">
@@ -262,7 +266,7 @@ export const Card = ({
           fill
           className="object-cover absolute z-10 inset-0"
         />
-      </motion.button>
+      </motion.div>
     </>
   );
 };

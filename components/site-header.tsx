@@ -9,7 +9,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import ConsultationModal from "@/components/NavbarComponents/ConsultationModal";
 import { ContactUsModal } from "@/components/NavbarComponents/ContactUsModal";
-
+import { CoolMode } from "@/components/magicui/cool-mode";
 const menuItem = [
   {
     id: 1,
@@ -152,19 +152,20 @@ export function SiteHeader() {
             </Link>
             <Link className="mr-6 text-2xl" href="/reviews">
               Reviews
-            </Link>
-            <button
-              className={cn(
-                buttonVariants({ variant: "secondary" }),
-                "text-2xl"
-              )}
-              onClick={() => {
-                closeMenu();
-                setIsModalOpen(true);
-              }}
-            >
-              Contact Us
-            </button>
+            </Link> 
+            <CoolMode>
+              <button
+                className={cn(
+                  "text-2xl, bg-greenTouch text-black py-1 px-3 rounded-md font-bold"
+                )}
+                onClick={() => {
+                  closeMenu();
+                  setIsModalOpen(true);
+                }}
+              >
+                Contact Us
+              </button>
+            </CoolMode>
           </div>
 
           {/* Hamburger Menu Button */}

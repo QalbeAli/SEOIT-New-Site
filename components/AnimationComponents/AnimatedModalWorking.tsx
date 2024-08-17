@@ -9,6 +9,7 @@ import {
 } from "@/components/AnimationComponents/AnimatedModal";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { HoverBorderGradient } from "./HoverBorderGradient";
 
 export function AnimatedModalWorking() {
   const [isThankYouModalOpen, setIsThankYouModalOpen] = useState(false);
@@ -22,14 +23,14 @@ export function AnimatedModalWorking() {
   return (
     <div className=" z-1000  flex items-center justify-center">
       <Modal>
-        <ModalTrigger className="bg-black dark:bg-greenTouch dark:text-black text-black flex justify-center group/modal-btn">
-          <span className="group-hover/modal-btn:translate-x-40 text-center transition duration-500">
-         Claim Audit
-
-          </span>
-          <div className="-translate-x-40 group-hover/modal-btn:translate-x-0 flex items-center justify-center absolute inset-0 transition duration-500 text-white z-20">
-            ✈️
-          </div>
+        
+        <ModalTrigger className="bg-black py-2  dark:text-black text-black flex justify-center group/modal-btn">
+        <HoverBorderGradient
+        className=""
+      >
+        <span className="p-2">Audit Now</span>
+      </HoverBorderGradient>
+        
         </ModalTrigger>
         <ModalBody>
           <ModalContent>

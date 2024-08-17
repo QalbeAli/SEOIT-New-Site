@@ -1,3 +1,4 @@
+import { ServicesIconCloud } from "@/components/AnimationComponents/ServicesIconCloud";
 import CallToActionService from "@/components/ServicesPageComponents/CallToActionService";
 import Clients from "@/components/ServicesPageComponents/Clients";
 import CompanyLogoService from "@/components/ServicesPageComponents/CompanyLogoService";
@@ -9,10 +10,12 @@ const Services = () => {
   return (
     <>
       <ServiceHeroAnimation />
+      <ServicesIconCloud />
       <ServicesGrid />
       <Clients />
       <CompanyLogoService />
       <CallToActionService />
+
     </>
   );
 };

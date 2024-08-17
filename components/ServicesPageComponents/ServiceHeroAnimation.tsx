@@ -8,7 +8,7 @@ export function ServiceHeroAnimation() {
     <div className="flex flex-col overflow-hidden">
       <ContainerScroll
         titleComponent={
-          <>
+          <div className="py-10">
             <h1 className="text-4xl font-semibold text-white ">
             We change the way you
             build  <br />
@@ -16,7 +16,7 @@ export function ServiceHeroAnimation() {
               Gatsby Sites
               </span>
             </h1>
-          </>
+          </div>
         }
       >
         <Image

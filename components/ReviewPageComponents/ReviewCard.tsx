@@ -17,7 +17,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
   reviewerImage,
 }) => {
   return (
-    <div className="bg-gray-800 text-white p-6 rounded-lg shadow-lg min-h-[400px]">
+    <div className="bg-gray-900 text-white p-6 rounded-lg shadow-lg min-h-[400px]">
       {" "}
       {/* Minimum height */}
       <div className="flex flex-col md:flex-row items-center mb-4 h-full">

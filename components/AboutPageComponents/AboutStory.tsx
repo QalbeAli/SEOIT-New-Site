@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { Cover } from "@/components/AnimationComponents/SparkleCover";
+
 const AboutStory = () => {
   return (
     <>
@@ -17,6 +18,7 @@ const AboutStory = () => {
           <Image src="/hero.webp" alt="HeroImage" width={1000} height={600} />
         </div>
       </div>
+      
     </>
   );
 };

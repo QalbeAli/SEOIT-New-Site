@@ -18,7 +18,7 @@ const BlogCard: React.FC<BlogCardProps> = ({
   link,
 }) => {
   return (
-    <div className="max-w-sm bg-white rounded-lg shadow-md overflow-hidden">
+    <div className=" bg-white rounded-lg shadow-md overflow-hidden">
       <div className="relative h-48 w-full">
         <Image src={imageSrc} alt={altText} layout="fill" objectFit="cover" />
       </div>
