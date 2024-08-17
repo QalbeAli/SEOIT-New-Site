@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const MarketingSection = () => {
   return (
-    <div className=" py-8">
+    <div className=" ">
       <div className="container text-white mx-auto flex justify-around items-center flex-wrap">
         <div className="w-full lg:w-1/3 p-4 text-center md:text-right">
           <div className="space-y-6">

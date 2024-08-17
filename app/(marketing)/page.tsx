@@ -28,8 +28,9 @@ export default async function Page() {
       <MarketingSection />
       {/* <MarketingService /> */}
       <TabsDemo />
-      <Competition />
-      <LeadGeneration />
+      {/* <Competition />
+      <LeadGeneration /> */}
+      <BentoDemo />
       <PerformanceStats />
       <Marketing /> 
       <CallToAction />
@@ -37,7 +38,6 @@ export default async function Page() {
       <InTouch />
       <Testimonials />
       <CallToActionSection />
-      {/* <BentoDemo /> */}
       <Particles
         className="absolute inset-0 -z-10"
         quantity={50}

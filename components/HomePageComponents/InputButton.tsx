@@ -6,7 +6,7 @@ const InputButton = () => {
     <div>
       <div className="relative flex h-10 w-full min-w-[320px]  max-w-[24rem]">
         <button
-          className="!absolute right-1 top-0.5 z-10 select-none rounded   text-center align-middle font-sans text-xs font-bold uppercase text-black shadow-md  transition-all hover:shadow-lg  focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none peer-placeholder-shown:pointer-events-none peer-placeholder-shown:bg-blue-gray-500 peer-placeholder-shown:opacity-50 peer-placeholder-shown:shadow-none"
+          className="!absolute right-1 top-0.5 z-10 select-none rounded bg-greenTouch   text-center align-middle font-sans text-xs font-bold uppercase text-black shadow-md  transition-all hover:shadow-lg  focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none peer-placeholder-shown:pointer-events-none peer-placeholder-shown:bg-blue-gray-500 peer-placeholder-shown:opacity-50 peer-placeholder-shown:shadow-none"
           type="button"
           data-ripple-light="true"
         >

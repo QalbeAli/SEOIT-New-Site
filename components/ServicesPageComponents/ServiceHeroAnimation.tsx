@@ -2,10 +2,11 @@
 import React from "react";
 import { ContainerScroll } from "@/components/AnimationComponents/ContainerScrollAnimation";
 import Image from "next/image";
-
+import Meteors from "@/components/magicui/meteors";
 export function ServiceHeroAnimation() {
   return (
     <div className="flex flex-col overflow-hidden">
+        
       <ContainerScroll
         titleComponent={
           <div className="py-10">

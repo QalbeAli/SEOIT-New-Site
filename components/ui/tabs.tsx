@@ -40,10 +40,10 @@ export const Tabs = ({
     <>
       <div
         className={cn(
-          "flex flex-row items-center justify-center [perspective:1000px] relative overflow-auto sm:overflow-visible no-visible-scrollbar max-w-full w-full",
+          "flex justify-center items-center flex-wrap  w-full mx-2 text-center relative",
           containerClassName
         )}
-      >
+      > 
         {propTabs.map((tab, idx) => (
           <button
             key={tab.title}
@@ -118,7 +118,7 @@ export const FadeInDiv = ({
           animate={{
             y: isActive(tab) ? [0, 40, 0] : 0,
           }}
-          className={cn("w-full h-full absolute top-0 left-0", className)}
+          className={cn("w-full md:h-full h-[300px] absolute top-0 left-0", className)}
         >
           {tab.content}
         </motion.div>

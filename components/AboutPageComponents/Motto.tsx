@@ -3,6 +3,7 @@ import React from "react";
 const Motto = () => {
   return (
     <>
+
       <div className="container mx-auto flex flex-col md:flex-row justify-center items-center my-20 space-y-6 md:space-y-0 md:space-x-20 leading-6 mb-40 text-center md:text-left">
         <div className="space-y-6">
           <div className="font-bold text-3xl text-white">Our Motto</div>

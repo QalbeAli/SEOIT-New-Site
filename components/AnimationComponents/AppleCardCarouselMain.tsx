@@ -129,7 +129,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
               >
                 <ShineBorder
                   className=" flex md:h-[600px] w-full flex-col items-center justify-center overflow-hidden rounded-3xl border bg-background md:shadow-xl"
-                  color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
+                  color={["#e9ffd8", "#d6fcb5", "#a9c98a"]}
                 >
                   {item}
                 </ShineBorder>

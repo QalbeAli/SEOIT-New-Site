@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import ConsultationModal from "@/components/NavbarComponents/ConsultationModal";
 import { ContactUsModal } from "@/components/NavbarComponents/ContactUsModal";
 import { CoolMode } from "@/components/magicui/cool-mode";
+import { Button } from "@/components/ui/button";
 const menuItem = [
   {
     id: 1,
@@ -135,6 +136,11 @@ export function SiteHeader() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex ml-auto items-center">
+            <div className="mr-6 mb-1 text-2xl">
+              <CoolMode>  
+                <Button>Click Me! I Will Dare You!</Button>
+              </CoolMode>
+            </div>
             <Link className="mr-6 text-2xl" href="/">
               Home
             </Link>
@@ -152,7 +158,7 @@ export function SiteHeader() {
             </Link>
             <Link className="mr-6 text-2xl" href="/reviews">
               Reviews
-            </Link> 
+            </Link>
             <CoolMode>
               <button
                 className={cn(

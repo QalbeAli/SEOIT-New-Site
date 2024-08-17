@@ -7,12 +7,15 @@ import Team from '@/components/AboutPageComponents/Team'
 import React from 'react'
 import { ShootingStars } from "@/components/ui/shooting-stars";
 import { StarsBackground } from "@/components/ui/stars-background";
+import { SphereMask } from "@/components/magicui/sphere-mask";
+
 const About = () => {
   return (
     <>
     <div className='my-20'>
       <AboutStory />
       <Motto />
+      <SphereMask />
       <MoreService />
       <CardGrid />
       <Team />

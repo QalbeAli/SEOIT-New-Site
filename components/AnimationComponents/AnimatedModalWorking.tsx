@@ -24,7 +24,7 @@ export function AnimatedModalWorking() {
     <div className=" z-1000  flex items-center justify-center">
       <Modal>
         
-        <ModalTrigger className="bg-black py-2  dark:text-black text-black flex justify-center group/modal-btn">
+        <ModalTrigger className="bg-greenTouch   dark:text-black text-black flex justify-center group/modal-btn">
         <HoverBorderGradient
         className=""
       >

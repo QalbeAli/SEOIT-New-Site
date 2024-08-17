@@ -1,23 +1,45 @@
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
+import { SparklesCore } from "../ui/sparkles";
 const Testimonials = () => {
   return (
     <div className=" p-8">
       <div className="container mx-auto max-w-5xl">
         <div className="text-center">
-          <h1 className="text-4xl text-white font-bold">OUR CLIENT SAY</h1>
-          <p className="text-white mt-2">
-            Creative Fuels Design Fuels Creativity, Be Here For More, Are You In Love with A Creative?
-          </p>
+          <div className=" pt-12 w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
+            <h1 className=" text-5xl py-4 font-bold text-center text-white relative z-20">
+              Our Client Says
+            </h1>
+            <div className="w-[40rem] h-40 relative">
+              {/* Gradients */}
+              <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
+              <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
+              <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
+              <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
+
+              {/* Core component */}
+              <SparklesCore
+                background="transparent"
+                minSize={0.4}
+                maxSize={2}
+                particleDensity={1200}
+                className="w-full h-full"
+                particleColor="#FFFFFF"
+              />
+
+              {/* Radial Gradient to prevent sharp edges */}
+              <div className="absolute inset-0 w-full h-full bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
+            </div>
+          </div>
         </div>
-     
+
         <div className="mt-8 flex flex-col md:flex-row items-center md:space-x-8">
           <div className="w-full md:w-1/3">
-            <Image 
-              src="/client.png" 
-              alt="Stephen Fanous" 
-              width={500} 
-              height={500} 
+            <Image
+              src="/client.png"
+              alt="Stephen Fanous"
+              width={500}
+              height={500}
               className="rounded-lg"
             />
           </div>
@@ -25,7 +47,9 @@ const Testimonials = () => {
             <div className="flex items-center">
               <div className="text-6xl text-gray-400 mr-4">“</div>
               <p className="text-white text-xl">
-                This Is Probably The Most Underrated Website & SEO Agency In The World. The Quality Of My New Website&apos;s Design & Functionality Are Incredible!
+                This Is Probably The Most Underrated Website & SEO Agency In The
+                World. The Quality Of My New Website&apos;s Design &
+                Functionality Are Incredible!
               </p>
             </div>
             <div className="mt-4 text-center md:text-left">
