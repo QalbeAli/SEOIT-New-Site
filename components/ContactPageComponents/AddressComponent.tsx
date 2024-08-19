@@ -12,15 +12,15 @@ const AddressComponent = () => {
   return (
     <>
       <div className="w-full max-w-6xl flex flex-col md:flex-row justify-between mx-auto items-center my-12">
-        <div className="flex flex-col my-6">
-          <div className="flex space-x-2">
+        <div className="flex flex-col my-6 p-2">
+          <div className="flex text-center ">
             <span className="mr-2 mt-1.5">Main Office</span>{" "}
             <div className="text-3xl">
-              901 N PIT STREET <br />{" "}
+              901 N PIT  <br />{" "}
             </div>
           </div>
           <div className="text-3xl">Alexandria VA, 22314</div>
-          <div className="mt-10">
+          <div className="mt-10 flex justify-center items-center">
           <ContactButton
             label="INFO@SEOIT.COM"
             onSelect={handleSelect}
@@ -39,7 +39,7 @@ const AddressComponent = () => {
             </div>
             <div className="text-3xl">342/1, 11000 Prague</div>
           </div>
-          <div className="mt-10">
+          <div className="mt-10 flex justify-center items-center">
           <ContactButton
               label="+1234567890"
               onSelect={handleSelect}

@@ -22,7 +22,7 @@ const ContactButton: React.FC<ContactButtonProps> = ({
     <button
       type="button" // Prevents form submission when this button is clicked
       className={classNames(
-        "relative inline-block cursor-pointer overflow-hidden border-2 border-white text-center px-4 py-2 rounded-full text-4xl",
+        "relative inline-block cursor-pointer overflow-hidden border-2 border-white text-center px-4 py-2 rounded-full text-3xl",
         { "bg-white text-black": selected }
       )}
       onMouseEnter={() => setHover(true)}

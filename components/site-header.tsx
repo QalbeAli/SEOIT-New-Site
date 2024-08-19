@@ -92,12 +92,14 @@ export function SiteHeader() {
   const handleContactPage = () => {
     console.log("Button clicked");
     router.push("/contact");
+    closeMenu();
+    
   };
 
   return (
     <>
       <div className="flex items-center justify-center">
-        <header className="fixed top-4 z-50 w-full max-w-6xl border rounded-full backdrop-blur-[12px]">
+        <header className="fixed top-4 z-50 w-full max-w-6xl md:border rounded-full md:backdrop-blur-[12px]">
           <div className="container flex h-[6rem] items-center justify-between px-4 md:px-8">
             <Link className="text-md font-bold flex items-center" href="/">
               <div className="w-24 mt-1.5 flex justify-center items-center">
@@ -172,8 +174,11 @@ export function SiteHeader() {
             </div>
 
             {/* Hamburger Menu Button */}
-            <button className="ml-auto md:hidden" onClick={toggleMenu}>
-              <span className="sr-only">Toggle menu</span>
+            <button
+              className="ml-auto md:hidden text-greenTouch"
+              onClick={toggleMenu}
+            >
+              <span className="sr-only ">Toggle menu</span>
               {hamburgerMenuIsOpen ? <XIcon /> : <AlignJustify />}
             </button>
           </div>

@@ -76,7 +76,7 @@ const ContactPage = () => {
     "No-code site",
     "Motion design",
     "Branding",
-    "Mobile development",
+    "Mobile Develop",
   ];
 
   const budgets = [
@@ -97,7 +97,7 @@ const ContactPage = () => {
     >
       <div className="">
         <div className=" ">
-          <h1 className="text-[100px] inline text-gray-400">
+          <h1 className=" text-5xl md:text-[100px] leading-snug text-center md:text-left text-gray-400">
             Hey!{" "}
             <span className="font-bold text-white">
               Tell us all <br />
@@ -107,8 +107,8 @@ const ContactPage = () => {
 
           <div className="mt-32">
             <form onSubmit={handleSubmit(onSubmit)}>
-              <p className="text-3xl my-5 text-gray-400">I'm interested in...</p>
-              <div className="flex flex-wrap gap-4">
+              <p className="text-3xl my-5 text-center md:text-left text-gray-400">I &apos;m interested in...</p>
+              <div className="flex flex-wrap gap-4 ml-2 md:ml-0">
                 {projects.map((project) => (
                   <ContactPageButton
                     key={project}
@@ -118,7 +118,7 @@ const ContactPage = () => {
                   />
                 ))}
               </div>
-              <div className="py-32 space-y-32">
+              <div className="py-32 space-y-28 p-2">
                 <input
                   type="text"
                   placeholder="Your Name"
@@ -142,8 +142,8 @@ const ContactPage = () => {
                 />
               </div>
               <div>
-                <p className="text-white text-4xl my-10">Project budget (USD)</p>
-                <div className="space-x-4 space-y-4">
+                <p className="text-white text-center md:text-left text-4xl my-10">Project budget (USD)</p>
+                <div className=" flex flex-col space-y-4 m-2">
                   {budgets.map((budget) => (
                     <ContactPageButton
                       key={budget}
@@ -154,7 +154,7 @@ const ContactPage = () => {
                   ))}
                 </div>
               </div>
-              <button type="submit" className="mt-20 border text-3xl py-20 px-28 rounded-full">
+              <button type="submit" className="mt-20 border text-3xl py-20 px-24 m-2 rounded-full">
                 Send Request
               </button>
             </form>
