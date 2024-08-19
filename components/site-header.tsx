@@ -90,6 +90,7 @@ export function SiteHeader() {
   const router = useRouter();
 
   const handleContactPage = () => {
+    console.log("Button clicked");
     router.push("/contact");
   };
 
@@ -163,10 +164,7 @@ export function SiteHeader() {
                   className={cn(
                     "text-2xl, bg-greenTouch text-black px-3 py-0.5 rounded-md font-bold"
                   )}
-                  onClick={() => {
-                    closeMenu();
-                    setIsModalOpen(true);
-                  }}
+                  onClick={handleContactPage}
                 >
                   Contact Us
                 </button>
@@ -322,7 +320,7 @@ export function SiteHeader() {
                   variants={mobileLinkVar}
                   className="w-full border-b border-gray-700"
                 >
-                  <div className="flex justify-center items-center mr-12 py-6 space-x-3 flex-col md:flex-row space-y-2 md:space-y-0">
+                  <div className="flex justify-center items-center py-6 space-x-3 flex-col md:flex-row space-y-2 md:space-y-0">
                     <CoolMode>
                       <Button>Click Me! I Will Dare You!</Button>
                     </CoolMode>
