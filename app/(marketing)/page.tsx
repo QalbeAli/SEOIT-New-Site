@@ -22,19 +22,20 @@ import { SphereMask } from "@/components/magicui/sphere-mask";
 export default async function Page() {
   return (
     <>
-    <AnimatedGradientTextDemo />
+      <AnimatedGradientTextDemo />
       <HeroSection />
       <ClientSection />
       <SphereMask />
-      <Brand />
-      <MarketingSection />
+      {/* <Brand /> */}
+      {/* <MarketingSection /> */}
+      <BentoDemo />
+
       {/* <MarketingService /> */}
       <TabsDemo />
       {/* <Competition />
       <LeadGeneration /> */}
-      <BentoDemo />
       <PerformanceStats />
-      <Marketing /> 
+      <Marketing />
       <CallToAction />
       <ProjectCardsCarousel />
       <InTouch />

@@ -2,19 +2,21 @@ import { ChevronRight } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import AnimatedGradientText from "@/components/magicui/animated-gradient-text";
-
+import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
 export async function AnimatedGradientTextDemo() {
   return (
-    <div className="z-10 flex pt-32 items-center justify-center">
+    <div className="z-10 flex pt-36 items-center justify-center">
       <AnimatedGradientText>
-        🎉 <hr className="mx-2 h-4 w-[1px] shrink-0 bg-gray-300" />{" "}
-        <span
+        <div
           className={cn(
-            `inline animate-gradient bg-gradient-to-r from-[#e9ffd8] via-[#d6fcb5] to-[#a9c98a] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`,
+            "group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200  dark:bg-transparent dark:hover:bg-neutral-800"
           )}
         >
-          Introducing SEOIT
-        </span>
+          <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
+            🎉 <hr className="mx-2 h-4 w-[1px] shrink-0 bg-gray-300" />{" "}
+            Introducing SEOIT
+          </AnimatedShinyText>
+        </div>
         <ChevronRight className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
       </AnimatedGradientText>
     </div>

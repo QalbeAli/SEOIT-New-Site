@@ -75,17 +75,17 @@ export function SiteFooter() {
           <div className="mb-12 flex-col flex gap-4">
             <Link href="/" className="flex items-center gap-1">
               <Image
-                src="/logo.png"
-                className="h-24 w-24  invert text-primary"
+                src="/logo.webp"
                 alt="Logo"
                 width={96}
                 height={96}
+                className="h-18 w-24"
               />
-              <span className="self-center font-bold text-4xl whitespace-nowrap dark:text-white">
+              {/* <span className="self-center font-bold text-4xl whitespace-nowrap dark:text-white">
                 SEOIT
-              </span>
+              </span> */}
             </Link>
-            <p className="max-w-xs">All Your It Services In One Platform</p>
+            <p className="max-w-xs">All Your IT Services In One Platform</p>
           </div>
           <div className="grid grid-cols-1 gap-8 sm:gap-10 sm:grid-cols-3">
             {footerNavs.map((nav) => (

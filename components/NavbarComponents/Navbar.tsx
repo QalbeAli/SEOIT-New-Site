@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 import ConsultationModal from "@/components/NavbarComponents/ConsultationModal";
 import { CoolMode } from "../magicui/cool-mode";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 export function NavbarDemo() {
   return (
@@ -29,31 +30,34 @@ function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
   return (
     <div
-      className={cn("md:fixed md:top-10 inset-x-0 mt-5 md:mt-0 w-full max-w-5xl mx-auto z-50", className)}
+      className={cn(
+        "md:fixed md:top-10 inset-x-0 mt-5 md:mt-0 w-full max-w-5xl mx-auto z-50",
+        className
+      )}
     >
       <Menu setActive={setActive}>
         <div>
-          <div className="w-24 flex justify-center items-center">
-            <img src="/logo.webp" alt="logo" />
-          </div>
+          <Link href="/">
+            <div className="w-24 flex justify-center items-center">
+              <img src="/logo.webp" alt="logo" />
+            </div>
+          </Link>
         </div>
 
         <div className="flex gap-5 items-center md:space-x-3 flex-wrap md:justify-center justify-around">
           <MenuItem setActive={setActive} active={active} item="Home">
             <div className="flex flex-col space-y-4 text-sm">
-              <HoveredLink href="/construction">Web Development</HoveredLink>
+              <HoveredLink href="/">Home</HoveredLink>
               <HoveredLink href="/construction">Interface Design</HoveredLink>
-              <HoveredLink href="/construction">
-                Search Engine Optimization
-              </HoveredLink>
+              <HoveredLink href="/construction">SEO</HoveredLink>
               <HoveredLink href="/construction">Branding</HoveredLink>
             </div>
           </MenuItem>
           <MenuItem setActive={setActive} active={active} item="About">
-            <div className="  text-sm grid grid-cols-2 gap-10 p-4">
+            <div className="  text-sm grid md:grid-cols-2 grid-cols-1 gap-10 p-4">
               <ProductItem
-                title="Algochurn"
-                href="/constructionm"
+                title="About Page"
+                href="/about"
                 src="https://assets.aceternity.com/demos/algochurn.webp"
                 description="Prepare for tech interviews like never before."
               />
@@ -79,7 +83,7 @@ function Navbar({ className }: { className?: string }) {
           </MenuItem>
           <MenuItem setActive={setActive} active={active} item="Services">
             <div className="flex flex-col space-y-4 text-sm">
-              <HoveredLink href="/construction">Hobby</HoveredLink>
+              <HoveredLink href="/services">Services</HoveredLink>
               <HoveredLink href="/construction">Individual</HoveredLink>
               <HoveredLink href="/construction">Team</HoveredLink>
               <HoveredLink href="/construction">Enterprise</HoveredLink>
@@ -87,7 +91,7 @@ function Navbar({ className }: { className?: string }) {
           </MenuItem>
           <MenuItem setActive={setActive} active={active} item="Pricing">
             <div className="flex flex-col space-y-4 text-sm">
-              <HoveredLink href="/construction">Web Development</HoveredLink>
+              <HoveredLink href="/pricing">Pricing</HoveredLink>
               <HoveredLink href="/construction">Interface Design</HoveredLink>
               <HoveredLink href="/construction">
                 Search Engine Optimization
@@ -97,7 +101,7 @@ function Navbar({ className }: { className?: string }) {
           </MenuItem>
           <MenuItem setActive={setActive} active={active} item="Blogs">
             <div className="flex flex-col space-y-4 text-sm">
-              <HoveredLink href="/construction">Web Development</HoveredLink>
+              <HoveredLink href="/blogs">Blogs</HoveredLink>
               <HoveredLink href="/construction">Interface Design</HoveredLink>
               <HoveredLink href="/construction">
                 Search Engine Optimization
@@ -107,7 +111,7 @@ function Navbar({ className }: { className?: string }) {
           </MenuItem>
           <MenuItem setActive={setActive} active={active} item="Reviews">
             <div className="flex flex-col space-y-4 text-sm">
-              <HoveredLink href="/construction">Web Development</HoveredLink>
+              <HoveredLink href="/reviews">Reviews</HoveredLink>
               <HoveredLink href="/construction">Interface Design</HoveredLink>
               <HoveredLink href="/construction">
                 Search Engine Optimization

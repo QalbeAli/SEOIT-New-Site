@@ -6,6 +6,8 @@ import {
   Card,
 } from "@/components/AnimationComponents/AppleCardCarouselMain";
 import { SparklesCore } from "../ui/sparkles";
+import AnimatedGridPattern from "@/components/magicui/animated-grid-pattern";
+import { cn } from "@/lib/utils";
 
 export function ProjectCardsCarousel() {
   const cards = data.map((card, index) => (
@@ -14,30 +16,26 @@ export function ProjectCardsCarousel() {
 
   return (
     <div className="w-full h-full py-20">
-      <div className=" pt-12 w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
-        <h1 className=" text-5xl py-4 font-bold text-center text-white relative z-20">
-          Our Projects
-        </h1>
-        <div className="w-[40rem] h-40 relative">
-          {/* Gradients */}
-          <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
-          <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
-          <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
-          <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
-
-          {/* Core component */}
-          <SparklesCore
-            background="transparent"
-            minSize={0.4}
-            maxSize={2}
-            particleDensity={1200}
-            className="w-full h-full"
-            particleColor="#FFFFFF"
-          />
-
-          {/* Radial Gradient to prevent sharp edges */}
-          <div className="absolute inset-0 w-full h-full bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
-        </div>
+      <div className="relative flex h-[500px] w-full items-center justify-center overflow-hidden rounded-lg bg-background p-20 md:shadow-xl">
+        <section className=" py-12 md:py-24">
+          <div className="container mx-auto text-center">
+           
+            <h1 className="text-3xl md:text-5xl font-bold text-white my-4">
+              Our Projects
+            </h1>
+           
+          </div>
+        </section>
+        <AnimatedGridPattern
+          numSquares={30}
+          maxOpacity={0.1}
+          duration={3}
+          repeatDelay={1}
+          className={cn(
+            "[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]",
+            "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12"
+          )}
+        />
       </div>
 
       <Carousel items={cards} />

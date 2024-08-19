@@ -107,7 +107,7 @@ const features = [
 export function BentoDemo() {
   return (
     <>
-      <div className=" flex justify-center items-center mt-[350px]">
+      <div className=" flex justify-center items-center ">
         <BentoGrid>
           {features.map((feature, idx) => (
             <BentoCard key={idx} {...feature} />
