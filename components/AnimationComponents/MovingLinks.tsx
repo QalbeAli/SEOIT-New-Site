@@ -2,17 +2,18 @@
 import React, { useState } from "react";
 import { MdArrowOutward } from "react-icons/md";
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
+import Link from "next/link";
 
 interface SocialLink {
   name: string;
-  icon: string; // Replace with actual icon path
+  link: string; // Replace with actual icon path
 }
 
 const socialLinks: SocialLink[] = [
-  { name: "Instagram", icon: "/instagram-icon.svg" },
-  { name: "LinkedIn", icon: "/linkedin-icon.svg" },
-  { name: "Dribbble", icon: "/dribbble-icon.svg" },
-  { name: "GitHub", icon: "/github-icon.svg" },
+  { name: "Instagram", link: "https://instagram.com/" },
+  { name: "LinkedIn", link: "https://linkedin.com/" },
+  { name: "Dribbble", link: "https://dribble.com/" },
+  { name: "GitHub", link: "https://github.com/" },
 ];
 
 const MovingLinks = () => {
@@ -33,15 +34,17 @@ const MovingLinks = () => {
               <MdArrowOutward />
             </div>
           </div>
-          <div className="absolute top-1/2 h-0 group-hover:h-full w-full flex justify-center items-center bg-white text-black -translate-y-1/2 transition-all ease-in duration-200">
-            {hoveredIndex === index && (
-              <VelocityScroll
-                text={`${link.name} ↗ `}
-                default_velocity={3}
-                className="font-display  text-center text-2xl font-bold tracking-[-0.02em] text-black drop-shadow-sm dark:text-black md:text-2xl md:leading-[8rem]"
-              />
-            )}
-          </div>
+          <Link href={link.link} target="_blank">
+            <div className="absolute top-1/2 h-0 group-hover:h-full w-full flex justify-center items-center bg-white text-black -translate-y-1/2 transition-all ease-in duration-200">
+              {hoveredIndex === index && (
+                <VelocityScroll
+                  text={`${link.name} ↗ `}
+                  default_velocity={3}
+                  className="font-display  text-center text-2xl font-bold tracking-[-0.02em] text-black drop-shadow-sm dark:text-black md:text-2xl md:leading-[8rem]"
+                />
+              )}
+            </div>
+          </Link>
         </div>
       ))}
     </>

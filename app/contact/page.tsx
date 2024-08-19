@@ -4,6 +4,7 @@ import AnimatedCursor from "react-animated-cursor";
 import RotatingImage from "@/components/AnimationComponents/ContactRotating";
 import { ScrollBasedVelocity } from "@/components/AnimationComponents/ScrollBasedVelocity";
 import MovingLinks from "@/components/AnimationComponents/MovingLinks";
+import AddressComponent from "@/components/ContactPageComponents/AddressComponent";
 
 const page = () => {
   return (
@@ -18,6 +19,9 @@ const page = () => {
         clickables={["button", "a"]} // Elements that trigger cursor animations
       />
       <ContactPage />
+      <ScrollBasedVelocity />
+      <MovingLinks />
+      <AddressComponent />
     </div>
   );
 };
