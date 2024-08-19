@@ -7,25 +7,25 @@ const Marketing = () => {
       icon: <FaEnvelope className="text-black text-3xl" />,
       title: "Email Marketing",
       description:
-        "Understand First. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.",
+        "Harness the power of personalised communication to drive engagement and conversions. Our targeted email marketing strategies ensure your message reaches the right audience at the right time, delivering measurable results.",
     },
     {
       icon: <FaFacebookF className="text-black text-3xl" />,
       title: "Facebook Marketing",
       description:
-        "Understand First. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.",
+        "Maximize your brand’s presence on the world’s largest social network. Our expert Facebook marketing services are designed to build your community, engage your followers, and turn likes into leads.",
     },
     {
       icon: <FaGoogle className="text-black text-3xl" />,
-      title: "Google Adwords",
+      title: "Google Ads",
       description:
-        "Understand First. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.",
+        "Reach your customers at the exact moment they’re searching for your products or services. Our Google Ads campaigns are meticulously crafted to ensure optimal performance and return on investment.",
     },
     {
       icon: <FaMobileAlt className="text-black text-3xl" />,
-      title: "In-App Marketing",
+      title: "TikTok Ads",
       description:
-        "Understand First. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.",
+        "Leverage the explosive growth of TikTok to reach a highly engaged audience with creative, impactful ads. Our TikTok ad strategies are designed to resonate with users, driving both brand awareness and conversions where your target audience is most active.",
     },
   ];
 

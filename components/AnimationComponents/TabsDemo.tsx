@@ -6,51 +6,51 @@ import { Tabs } from "../ui/tabs";
 export function TabsDemo() {
   const tabs = [
     {
-      title: "Product",
+      title: "Cool Shit We Made",
       value: "product",
       content: (
         <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-lime-200 to-lime-300">
-          <p className="text-black">Product Tab</p>
+          <p className="text-black">Cool Shit We Made Tab</p>
           <DummyContent />
         </div>
       ),
     },
     {
-      title: "Services",
+      title: "SEO",
       value: "services",
       content: (
         <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-black bg-gradient-to-br from-lime-200 to-lime-300">
-          <p>Services tab</p>
+          <p>SEO Tab</p>
           <DummyContent />
         </div>
       ),
     },
     {
-      title: "Playground",
+      title: "IT",
       value: "playground",
       content: (
         <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-lime-200 to-lime-300">
-          <p className="text-black">Playground tab</p>
+          <p className="text-black">IT Tab</p>
           <DummyContent />
         </div>
       ),
     },
     {
-      title: "Content",
+      title: "Social",
       value: "content",
       content: (
         <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-lime-200 to-lime-300">
-          <p className="text-black">Content tab</p>
+          <p className="text-black">SOCIAL tab</p>
           <DummyContent />
         </div>
       ),
     },
     {
-      title: "Random",
+      title: "Growth Hacking",
       value: "random",
       content: (
         <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-lime-200 to-lime-300s">
-          <p className="text-black">Random tab</p>
+          <p className="text-black">Growth Hacking Tab</p>
           <DummyContent />
         </div>
       ),

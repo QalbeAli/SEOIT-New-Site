@@ -93,12 +93,11 @@ export function SiteHeader() {
     console.log("Button clicked");
     router.push("/contact");
     closeMenu();
-    
   };
 
   return (
     <>
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center bg-black">
         <header className="fixed top-4 z-50 w-full max-w-6xl md:border rounded-full md:backdrop-blur-[12px]">
           <div className="container flex h-[6rem] items-center justify-between px-4 md:px-8">
             <Link className="text-md font-bold flex items-center" href="/">
@@ -120,31 +119,31 @@ export function SiteHeader() {
                   <div className="text-sm grid md:grid-cols-2 grid-cols-1 gap-10 p-4">
                     <ProductItem
                       onClick={handleMenuItemClick}
-                      title="About Page"
+                      title="Growth Hacking"
                       href="/services"
                       src="https://assets.aceternity.com/demos/algochurn.webp"
-                      description="Prepare for tech interviews like never before."
+                      description="We deploy data-driven strategies and innovative tactics to accelerate your business growth."
                     />
                     <ProductItem
                       onClick={handleMenuItemClick}
-                      title="Tailwind Master Kit"
+                      title="SEO"
                       href="/services"
                       src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
-                      description="Production ready Tailwind css components for your next project"
+                      description="Our SEO strategies are built to dominate search engines."
                     />
                     <ProductItem
                       onClick={handleMenuItemClick}
-                      title="Moonbeam"
+                      title="IT Solutions"
                       href="/services"
                       src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
-                      description="Never write from scratch again. Go from idea to blog in minutes."
+                      description="Our IT expertise ensures your digital infrastructure is robust, secure, and scalable."
                     />
                     <ProductItem
                       onClick={handleMenuItemClick}
-                      title="Rogue"
+                      title="Social Media"
                       href="/services"
                       src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
-                      description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
+                      description="We craft social media strategies that build community, engagement, and brand loyalty."
                     />
                   </div>
                 </MenuItem>
@@ -160,7 +159,7 @@ export function SiteHeader() {
               </Link>
               <div className="flex justify-center items-center mr-12 space-x-3 flex-col md:flex-row space-y-2 md:space-y-0">
                 <CoolMode>
-                  <Button>Click Me! I Will Dare You!</Button>
+                  <Button>Touch me, I dare you!</Button>
                 </CoolMode>
                 <button
                   className={cn(
@@ -327,7 +326,7 @@ export function SiteHeader() {
                 >
                   <div className="flex justify-center items-center py-6 space-x-3 flex-col md:flex-row space-y-2 md:space-y-0">
                     <CoolMode>
-                      <Button>Click Me! I Will Dare You!</Button>
+                      <Button>Touch me, I dare you!</Button>
                     </CoolMode>
                     <button
                       className={cn(

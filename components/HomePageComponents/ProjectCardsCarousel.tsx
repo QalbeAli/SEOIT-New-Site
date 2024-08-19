@@ -15,8 +15,8 @@ export function ProjectCardsCarousel() {
   ));
 
   return (
-    <div className="w-full h-full py-20">
-      <div className="relative flex h-[500px] w-full items-center justify-center overflow-hidden rounded-lg bg-background p-20 md:shadow-xl">
+    <div className="w-full h-full py-10">
+      <div className="relative flex h-[250px] w-full items-center justify-center overflow-hidden rounded-lg bg-background p-20 md:shadow-xl">
         <section className=" py-12 md:py-24">
           <div className="container mx-auto text-center">
            

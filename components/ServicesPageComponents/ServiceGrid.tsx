@@ -13,25 +13,25 @@ const ServicesGrid: FC = () => {
       icon: <PhoneIcon className="h-10 w-10 text-greenTouch" />,
       title: "Marketing solutions for IT business",
       description:
-        "As an Internet marketing strategy, SEO considers how search engines work, the computer-programmed algorithms that dictate search engine behavior.",
+        "As a comprehensive internet marketing strategy, our SEO approach delves deep into understanding how search engines function. We harness advanced algorithms and data-driven tactics to enhance your visibility and ensure your business stands out in the competitive digital landscape.",
     },
     {
       icon: <ClipboardListIcon className="h-10 w-10 text-greenTouch" />,
       title: "Application design & development",
       description:
-        "Social media marketing is the use of social media platforms and websites to promote a product or service and is becoming more popular.",
+        "From concept to execution, our application design and development services are tailored to meet the unique needs of your business. We create intuitive, user-friendly applications that enhance your digital presence and drive engagement across all platforms.",
     },
     {
       icon: <MailIcon className="h-10 w-10 text-greenTouch" />,
       title: "Customer experience strategy",
       description:
-        "Content marketing is a form of marketing focused on creating, publishing, and distributing content for a targeted audience online.",
+        "Delivering a seamless and impactful customer experience is at the heart of what we do. Our content marketing strategies focus on creating, publishing, and distributing high-quality content that resonates with your target audience and drives meaningful interactions.",
     },
     {
       icon: <ShieldCheckIcon className="h-10 w-10 text-greenTouch" />,
       title: "Branding & marketing solutions",
       description:
-        "Social media marketing is the use of social media platforms and websites to promote a product or service and is becoming more popular.",
+        "Building a strong, recognizable brand is essential for long-term success. Our branding and marketing solutions are designed to promote your product or service across social media and other digital platforms, increasing visibility and fostering brand loyalty.",
     },
   ];
 

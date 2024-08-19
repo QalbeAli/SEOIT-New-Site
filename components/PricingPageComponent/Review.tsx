@@ -6,22 +6,22 @@ const reviews = [
   {
     imageSrc: 'john.webp',
     review: 'Excellent customer service, You guys are the best!',
-    name: 'John Doe',
-    title: 'Marketing Manager',
+    name: 'Stephen Fanous',
+    title: 'CEO - Marketplace Fresh',
     companyLogo: 'https://via.placeholder.com/50'
   },
   {
     imageSrc: 'john.webp',
     review: 'Great experience, will recommend to others!',
-    name: 'Jane Smith',
-    title: 'Product Manager',
+    name: 'Stephen Fanous',
+    title: 'CEO - Marketplace Fresh',
     companyLogo: 'https://via.placeholder.com/50'
   },
   {
     imageSrc: 'john.webp',
     review: 'Top-notch service and support!',
-    name: 'Bob Johnson',
-    title: 'Sales Director',
+    name: 'Stephen Fanous',
+    title: 'CEO - Marketplace Fresh',
     companyLogo: 'https://via.placeholder.com/50'
   }
 ];

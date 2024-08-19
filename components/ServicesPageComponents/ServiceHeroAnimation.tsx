@@ -9,7 +9,7 @@ export function ServiceHeroAnimation() {
         
       <ContainerScroll
         titleComponent={
-          <div className="mt-24">
+          <div className="mt-24 leading-snug">
             <h1 className="text-4xl font-semibold text-white ">
             We change the way you
             build  <br />

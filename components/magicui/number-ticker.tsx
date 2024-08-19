@@ -14,7 +14,7 @@ export default function NumberTicker({
   value: number;
   direction?: "up" | "down";
   className?: string;
-  delay?: number; // delay in s
+  delay?: number; // delay in seconds
 }) {
   const ref = useRef<HTMLSpanElement>(null);
   const motionValue = useMotionValue(direction === "down" ? value : 0);
@@ -35,9 +35,11 @@ export default function NumberTicker({
   useEffect(() => {
     springValue.on("change", (latest) => {
       if (ref.current) {
-        ref.current.textContent = Intl.NumberFormat("en-US").format(
-          Number(latest.toFixed(0)) // Convert to number before formatting
-        );
+        // Format the number to compact notation
+        ref.current.textContent = Intl.NumberFormat("en-US", {
+          notation: "compact",
+          compactDisplay: "short",
+        }).format(Number(latest.toFixed(0)));
       }
     });
   }, [springValue]);

@@ -20,19 +20,21 @@ export default function HeroSection() {
       id="hero"
       className="relative mx-auto mt-32 max-w-[80rem] px-6 text-center md:px-8"
     >
-     
       <h1 className="bg-gradient-to-br dark:from-white from-black from-0% dark:to-white/40 to-black/40 bg-clip-text py-6 text-3xl font-medium leading-none tracking-tighter text-transparent text-balance sm:text-6xl md:text-7xl lg:text-8xl translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:200ms]">
-        All Your Growth Hacking Deliverables
-        <br className="hidden md:block" /> in 1 Platform
+        Proven Results for High-Growth
+        <br className="hidden md:block" /> Businesses
       </h1>
       <p className="mb-12 text-lg tracking-tight text-gray-400 md:text-xl text-balance translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:400ms]">
-        SEO, IT Custom Websites, Social Media, 3D Design & Growth Hacking
-        Services
+        Growth Hacking Strategies That Drive Revenue and Scale Your Business
         <br className="hidden md:block" /> For Businesses over $1M+ a year
       </p>
-      
+
       <div className="flex justify-center items-center">
-        <InputWithButton placeholder="Website URL" buttonText="Audit Now" onClick={() => {}} />
+        <InputWithButton
+          placeholder="Website URL"
+          buttonText="Audit Now"
+          onClick={() => {}}
+        />
       </div>
       <div
         ref={ref}

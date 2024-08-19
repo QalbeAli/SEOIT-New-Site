@@ -12,70 +12,94 @@ import { useRouter } from "next/navigation"; // Import useRouter for navigation
 type Interval = "month" | "year";
 
 export const toHumanPrice = (price: number, decimals: number = 2) => {
-  return Number(price / 1).toFixed(decimals);
+  return price
+    .toFixed(decimals) 
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 };
 
 const demoPrices = [
   {
     id: "price_1",
-    name: "Basic",
-    description: "A basic plan for startups and individual users",
+    name: "Platinum",
+    description:
+      "A plan for industry leaders seeking unparalleled growth strategies.",
     features: [
-      "AI-powered analytics",
-      "Basic support",
-      "5 projects limit",
-      "Access to basic AI tools",
+      "Personalized growth strategy sessions",
+      "Unlimited custom AI-powered analytics and insights",
+      "Advanced SEO and SEM campaign management",
+      "Bespoke web and app development services",
+      "Custom-tailored social media and branding campaigns",
+      "Priority access to beta tools and features",
+      "Comprehensive monthly reporting and data-driven recommendations",
+      "Regular A/B testing and optimization across all platforms",
+      "Full integration with your existing tech stack",
     ],
-    monthlyPrice: 100,
-    yearlyPrice: 1200,
+    monthlyPrice: 10000,
+    yearlyPrice: 120000,
     isMostPopular: false,
   },
   {
     id: "price_2",
-    name: "Premium",
-    description: "A premium plan for growing businesses",
+    name: "Diamond",
+    description:
+      "The ultimate plan for enterprises demanding the highest level of service and results.",
     features: [
-      "Advanced AI insights",
-      "Priority support",
-      "Unlimited projects",
-      "Access to all AI tools",
-      "Custom integrations",
+      "Everything in the Platinum Plan",
+      "In-person quarterly strategy workshops",
+      "Full-service digital transformation consulting",
+      "Custom AI development tailored to your business needs",
+      "On-site support for major campaigns and product launches",
+      "Access to our VIP client network for exclusive partnership opportunities",
+      "White-glove onboarding and training for your entire team",
+      "Dedicated project management team for all ongoing initiatives",
+      "Guaranteed priority access to new technologies and features before public release",
+      "Custom-built analytics dashboards and reporting tools",
     ],
-    monthlyPrice: 200,
-    yearlyPrice: 2400,
+    monthlyPrice: 20000,
+    yearlyPrice: 240000,
     isMostPopular: true,
   },
   {
     id: "price_5",
-    name: "Enterprise",
+    name: "Titanium Plan",
     description:
-      "An enterprise plan with advanced features for large organizations",
+      "For enterprises and high-net-worth individuals looking for the most elite service available.",
     features: [
-      "Custom AI solutions",
-      "24/7 dedicated support",
-      "Unlimited projects",
-      "Access to all AI tools",
-      "Custom integrations",
-      "Data security and compliance",
+      "Everything in the Diamond Plan",
+      "1-on-1 executive strategy sessions with our founders ",
+      "Dedicated account manager with 24/7 support",
+      "Unlimited access to all SEO iT Social proprietary tools and technologies",
+      "Global market entry strategy consulting",
+      "VIP event invitations and industry networking opportunities",
+      "Exclusive market research reports and insights",
+      "Full-stack development support for enterprise-level projects",
+      "Advanced data security and compliance measures",
+      "Customized automation solutions to streamline your operations",
+      "Direct line to our top-tier experts for instant advice and support",
+      "First access to all innovations, products, and services"
     ],
-    monthlyPrice: 300,
-    yearlyPrice: 3600,
+    monthlyPrice: 45000,
+    yearlyPrice: 540000,
     isMostPopular: false,
   },
   {
     id: "price_6",
-    name: "Ultimate",
-    description: "The ultimate plan with all features for industry leaders",
+    name: "Custom Enterprise Solutions Plan",
+    description: "Tailored for enterprises with a minimum of $5M+ in annual revenue, offering bespoke solutions for sustained growth.",
     features: [
-      "Bespoke AI development",
-      "White-glove support",
-      "Unlimited projects",
-      "Priority access to new AI tools",
-      "Custom integrations",
-      "Highest data security and compliance",
+      "Completely custom-tailored growth strategies designed around your unique business needs",
+      "Dedicated senior-level consultants and a specialized team assigned exclusively to your account",
+      "Unlimited access to our full suite of services, tools, and technologies",
+      "Bespoke development and implementation of AI, automation, and analytics platforms",
+      "Global market expansion and brand positioning strategies",
+      "24/7 white-glove support with on-demand in-person consulting and project management",
+      "Executive-level workshops, training, and strategy sessions tailored to your leadership team",
+      "Customized reporting, analytics, and data visualization tools built specifically for your business",
+      "Exclusive partnership opportunities and introductions within our VIP client network",
+      "Continuous innovation with direct input into product development tailored for your needs"
     ],
-    monthlyPrice: 500,
-    yearlyPrice: 6000,
+    monthlyPrice: 83333,
+    yearlyPrice: 1000000,
     isMostPopular: false,
   },
 ];
@@ -100,7 +124,7 @@ export default function PricingSection() {
   const onSubscribeClick = async (priceId: string, price: number) => {
     setIsLoading(true);
     setId(priceId);
-    
+
     // Simulate a delay for demonstration purposes
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
@@ -116,13 +140,12 @@ export default function PricingSection() {
       <div className="mx-auto flex max-w-screen-xl flex-col gap-8 px-4 py-14 md:px-8">
         <div className="mx-auto max-w-5xl text-center">
           <h2 className="text-5xl font-bold py-10 tracking-tight text-black dark:text-white sm:text-6xl">
-            Simple pricing for everyone.
+            Exclusive Pricing for Elite Growth Services
           </h2>
 
           <p className="mt-6 text-xl leading-8 text-black/80 dark:text-white">
-            Choose an <strong>affordable plan</strong> that&apos;s packed with
-            the best features for engaging your audience, creating customer
-            loyalty, and driving sales.
+            Choose a tailored plan designed to drive exponential growth and
+            deliver exceptional value.
           </p>
         </div>
 
@@ -198,7 +221,12 @@ export default function PricingSection() {
                   "transform-gpu ring-offset-current transition-all duration-300 ease-out hover:ring-2 hover:ring-primary hover:ring-offset-2"
                 )}
                 disabled={isLoading}
-                onClick={() => void onSubscribeClick(price.id, interval === "year" ? price.yearlyPrice : price.monthlyPrice)}
+                onClick={() =>
+                  void onSubscribeClick(
+                    price.id,
+                    interval === "year" ? price.yearlyPrice : price.monthlyPrice
+                  )
+                }
               >
                 <span className="absolute right-0 -mt-12 h-32 w-8 translate-x-12 rotate-12 transform-gpu bg-white opacity-10 transition-all duration-1000 ease-out group-hover:-translate-x-96 dark:bg-black" />
                 {(!isLoading || (isLoading && id !== price.id)) && (

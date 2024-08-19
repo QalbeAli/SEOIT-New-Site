@@ -14,15 +14,17 @@ const Clients = () => {
           className="rounded-lg"
         />
       </div>
-      <div className="flex flex-col md:flex-row items-center text-center md:space-x-10 md:text-left p-4">
-        <div className="font-bold text-2xl md:text-3xl mb-6 md:mb-8 space-y-2 text-sil">
-          Join our happy <br className="hidden md:block"/> community of clients
+      <div className="flex flex-col md:flex-row items-center text-center w-full max-w-5xl mx-auto md:space-x-10 md:text-left p-4">
+        <div className="font-bold text-2xl md:text-3xl mb-6 md:mb-8  whitespace-nowrap space-y-2 text-sil">
+          Join Our Happy Community <br /> of Clients
         </div>
         <div className="text-sm md:text-base space-y-2 md:mb-6 text-small text-lightDark">
-          Mel tota quidam senserit et ut tritani platonem est. In a professional
-          context it <br className="hidden md:block"/> often happens that private or corporate clients order a
-          publication to be made <br className="hidden md:block"/> and presented with the actual content still not
-          being ready.
+          Our clients are more than just customers they &apos;re partners in
+          innovation and growth. We pride ourselves on delivering results that
+          matter, helping businesses from startups to global enterprises,
+          achieve their full potential. Whether you &apos;re looking to scale your
+          operations or refine your strategy, our tailored solutions are
+          designed to meet your unique needs and exceed expectations.
         </div>
       </div>
     </div>

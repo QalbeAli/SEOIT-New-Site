@@ -31,17 +31,18 @@ const CustomerReview: React.FC<CustomerReviewProps> = ({
           </div>
           <div className="text-center md:text-left">
             <h3 className=" font-bold mb-10 text-white text-2xl ">
-              Customer Story
+              Customer Growth <br /> Success Story
             </h3>
             <p className="text-2xl text-white font-semibold mb-10">
               Excellent customer service, <br className="hidden md:block" /> You
               guys are the best!
             </p>
-            <p className="text-white mb-4">
-              Sed commodo, est quis maximus <br className="hidden md:block" />{" "}
-              fermentum, massa ipsum euismod neque,
-              <br className="hidden md:block" /> in varius risus tellus quis
-              lacus. Sed ac <br className="hidden md:block" /> bibendum odio.
+            <p className="text-white mb-4 w-full max-w-2xl">
+              Excellent customer service, you guys are the best! From day one,
+              SEO iT Social has exceeded our expectations by providing top-notch
+              strategies and personalised support. Their innovative approach has
+              significantly improved our online presence and revenue streams. We
+              have generated an extra $500k of new revenue in 60 days
             </p>
             <div className="flex flex-col md:flex-row items-center justify-center md:justify-start">
               {/* <img

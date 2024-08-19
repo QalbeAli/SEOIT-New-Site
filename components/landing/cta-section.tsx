@@ -176,22 +176,22 @@ export default function CallToActionSection() {
               </div>
               <div className="z-10 mt-4 flex flex-col items-center text-center text-primary">
                 <h1 className="text-3xl font-bold lg:text-4xl">
-                  Stop wasting time on design.
+                Ready to create cool shit that works?
                 </h1>
                 <p className="mt-2">
-                  Start your 7-day free trial. No credit card required.
+                Supercharge your business growth with our all-in-one platform.
                 </p>
                 <Link
-                  href="#"
+                  href="/contact"
                   className={cn(
                     buttonVariants({
                       size: "lg",
                       variant: "outline",
                     }),
-                    "group mt-4 rounded-[2rem] px-6"
+                    "group mt-4 rounded-[2rem] p-6"
                   )}
                 >
-                  Get Started
+                  Book Free Business Growth Hacking Strategy Meeting
                   <ChevronRight className="ml-1 size-4 transition-all duration-300 ease-out group-hover:translate-x-1" />
                 </Link>
               </div>

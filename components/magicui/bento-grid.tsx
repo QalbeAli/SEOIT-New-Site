@@ -15,7 +15,7 @@ const BentoGrid = ({
     <div className="flex justify-center items-center min-h-screen">
       <div
         className={cn(
-          "grid w-full  auto-rows-[22rem] grid-cols-3 gap-4 p-2",
+          "grid w-full max-w-7xl  auto-rows-[22rem] grid-cols-3 gap-4 p-2",
           className
         )}
       >

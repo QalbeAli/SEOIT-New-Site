@@ -8,6 +8,7 @@ import React from 'react'
 import { ShootingStars } from "@/components/ui/shooting-stars";
 import { StarsBackground } from "@/components/ui/stars-background";
 import { SphereMask } from "@/components/magicui/sphere-mask";
+import { BentoDemo } from "@/components/AnimationComponents/BentoDemo";
 
 const About = () => {
   return (
@@ -17,7 +18,9 @@ const About = () => {
       <Motto />
       <SphereMask />
       <MoreService />
-      <CardGrid />
+      <BentoDemo />
+
+      {/* <CardGrid /> */}
       <Team />
       <ProfileGrid />
       <ShootingStars />
