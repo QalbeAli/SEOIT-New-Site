@@ -11,6 +11,8 @@ import ConsultationModal from "@/components/NavbarComponents/ConsultationModal";
 import { ContactUsModal } from "@/components/NavbarComponents/ContactUsModal";
 import { CoolMode } from "@/components/magicui/cool-mode";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
+
 import {
   MenuItem,
   ProductItem,
@@ -79,14 +81,22 @@ export function SiteHeader() {
     };
   }, [setHamburgerMenuIsOpen]);
 
+  const [active, setActive] = useState<string | null>(null);
+
   const handleMenuItemClick = () => {
-    closeMenu(); // Close the menu on link click
+    setActive(null);
+    closeMenu();
+  };
+  const router = useRouter();
+
+  const handleContactPage = () => {
+    router.push("/contact");
   };
 
   return (
     <>
       <div className="flex items-center justify-center">
-        <header className="fixed top-8 z-50 w-full max-w-6xl border rounded-full backdrop-blur-[12px]">
+        <header className="fixed top-4 z-50 w-full max-w-6xl border rounded-full backdrop-blur-[12px]">
           <div className="container flex h-[6rem] items-center justify-between px-4 md:px-8">
             <Link className="text-md font-bold flex items-center" href="/">
               <div className="w-24 mt-1.5 flex justify-center items-center">
@@ -103,7 +113,7 @@ export function SiteHeader() {
                 About
               </Link>
               <div className="mr-6 text-xl">
-                <MenuItem setActive={() => {}} active={null} item="Services">
+                <MenuItem setActive={setActive} active={active} item="Services">
                   <div className="text-sm grid md:grid-cols-2 grid-cols-1 gap-10 p-4">
                     <ProductItem
                       onClick={handleMenuItemClick}
@@ -164,10 +174,7 @@ export function SiteHeader() {
             </div>
 
             {/* Hamburger Menu Button */}
-            <button
-              className="ml-auto md:hidden"
-              onClick={toggleMenu}
-            >
+            <button className="ml-auto md:hidden" onClick={toggleMenu}>
               <span className="sr-only">Toggle menu</span>
               {hamburgerMenuIsOpen ? <XIcon /> : <AlignJustify />}
             </button>
@@ -189,10 +196,7 @@ export function SiteHeader() {
                   SEOIT
                 </Link>
 
-                <button
-                  className="md:hidden"
-                  onClick={toggleMenu}
-                >
+                <button className="md:hidden" onClick={toggleMenu}>
                   <span className="sr-only">Toggle menu</span>
                   {hamburgerMenuIsOpen ? <XIcon /> : <AlignJustify />}
                 </button>
@@ -204,21 +208,116 @@ export function SiteHeader() {
                 initial="initial"
                 animate={hamburgerMenuIsOpen ? "open" : "exit"}
               >
-                {menuItem.map((item) => (
-                  <motion.li
-                    key={item.id}
-                    variants={mobileLinkVar}
-                    className="w-full border-b border-gray-700"
+                <motion.li
+                  variants={mobileLinkVar}
+                  className="w-full border-b border-gray-700"
+                >
+                  <Link
+                    href="/"
+                    className="block w-full py-2 text-xl text-gray-200 hover:text-white"
+                    onClick={handleMenuItemClick}
                   >
-                    <Link
-                      href={item.href}
-                      className="block w-full py-2 text-xl text-gray-200 hover:text-white"
-                      onClick={handleMenuItemClick}
-                    >
-                      {item.label}
-                    </Link>
-                  </motion.li>
-                ))}
+                    Home
+                  </Link>
+                </motion.li>
+                <motion.li
+                  variants={mobileLinkVar}
+                  className="w-full border-b border-gray-700"
+                >
+                  <Link
+                    href="/about"
+                    className="block w-full py-2 text-xl text-gray-200 hover:text-white"
+                    onClick={handleMenuItemClick}
+                  >
+                    About
+                  </Link>
+                </motion.li>
+                <motion.li
+                  variants={mobileLinkVar}
+                  className="w-full border-b border-gray-700"
+                >
+                  <Link
+                    href="/services"
+                    className="block w-full py-2 text-xl text-gray-200 hover:text-white"
+                    onClick={handleMenuItemClick}
+                  >
+                    <div className="text-xl">
+                      <MenuItem
+                        setActive={setActive}
+                        active={active}
+                        item="Services"
+                      >
+                        <div className="text-sm grid md:grid-cols-2 grid-cols-1 gap-10 p-4">
+                          <ProductItem
+                            onClick={handleMenuItemClick}
+                            title="About Page"
+                            href="/services"
+                            src="https://assets.aceternity.com/demos/algochurn.webp"
+                            description="Prepare for tech interviews like never before."
+                          />
+                          <ProductItem
+                            onClick={handleMenuItemClick}
+                            title="Tailwind Master Kit"
+                            href="/services"
+                            src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
+                            description="Production ready Tailwind css components for your next project"
+                          />
+                          <ProductItem
+                            onClick={handleMenuItemClick}
+                            title="Moonbeam"
+                            href="/services"
+                            src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
+                            description="Never write from scratch again. Go from idea to blog in minutes."
+                          />
+                          <ProductItem
+                            onClick={handleMenuItemClick}
+                            title="Rogue"
+                            href="/services"
+                            src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
+                            description="Respond to government RFPs, RFIs, and RFQs 10x faster using AI"
+                          />
+                        </div>
+                      </MenuItem>
+                    </div>
+                  </Link>
+                </motion.li>
+                <motion.li
+                  variants={mobileLinkVar}
+                  className="w-full border-b border-gray-700"
+                >
+                  <Link
+                    href="/pricing"
+                    className="block w-full py-2 text-xl text-gray-200 hover:text-white"
+                    onClick={handleMenuItemClick}
+                  >
+                    Pricing
+                  </Link>
+                </motion.li>
+                <motion.li
+                  variants={mobileLinkVar}
+                  className="w-full border-b border-gray-700"
+                >
+                  <Link
+                    href="/blogs"
+                    className="block w-full py-2 text-xl text-gray-200 hover:text-white"
+                    onClick={handleMenuItemClick}
+                  >
+                    Blogs
+                  </Link>
+                </motion.li>
+                <motion.li
+                  variants={mobileLinkVar}
+                  className="w-full border-b border-gray-700"
+                >
+                  <Link
+                    href="/reviews"
+                    className="block w-full py-2 text-xl text-gray-200 hover:text-white"
+                    onClick={handleMenuItemClick}
+                  >
+                    Reviews
+                  </Link>
+                </motion.li>
+
                 <motion.li
                   variants={mobileLinkVar}
                   className="w-full border-b border-gray-700"
@@ -231,10 +330,7 @@ export function SiteHeader() {
                       className={cn(
                         "text-2xl bg-greenTouch text-black px-3 py-0.5 rounded-md font-bold"
                       )}
-                      onClick={() => {
-                        closeMenu();
-                        setIsModalOpen(true);
-                      }}
+                      onClick={handleContactPage}
                     >
                       Contact Us
                     </button>
@@ -244,8 +340,6 @@ export function SiteHeader() {
             </motion.nav>
           )}
         </AnimatePresence>
-
-       
       </div>
     </>
   );
