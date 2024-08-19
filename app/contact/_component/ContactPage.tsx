@@ -143,7 +143,7 @@ const ContactPage = () => {
               </div>
               <div>
                 <p className="text-white text-center md:text-left text-4xl my-10">Project budget (USD)</p>
-                <div className=" flex flex-col space-y-4 m-2">
+                <div className=" md:space-x-4 space-y-4 m-2 md:m-0 flex flex-col md:block ">
                   {budgets.map((budget) => (
                     <ContactPageButton
                       key={budget}
