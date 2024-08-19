@@ -87,7 +87,7 @@ const ContactButton: React.FC<ContactButtonProps> = ({ label, onSelect, selected
 
   return (
     <button
-      className={classNames("relative inline-block cursor-pointer overflow-hidden border-2 text-center px-4 py-2 rounded-full text-4xl",
+      className={classNames("relative inline-block cursor-pointer overflow-hidden border-2 border-white text-center px-4 py-2 rounded-full text-4xl",
         { "bg-white text-black": selected }
       )
 
