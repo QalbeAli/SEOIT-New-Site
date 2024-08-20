@@ -38,7 +38,7 @@ export default async function Page() {
       <Marketing />
       <CallToAction />
       <ProjectCardsCarousel />
-      <InTouch />
+      {/* <InTouch /> */}
       <Testimonials />
       <CallToActionSection />
       <Particles

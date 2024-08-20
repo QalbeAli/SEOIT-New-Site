@@ -12,9 +12,7 @@ import { useRouter } from "next/navigation"; // Import useRouter for navigation
 type Interval = "month" | "year";
 
 export const toHumanPrice = (price: number, decimals: number = 2) => {
-  return price
-    .toFixed(decimals) 
-    .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  return price.toFixed(decimals).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 };
 
 const demoPrices = [
@@ -76,7 +74,7 @@ const demoPrices = [
       "Advanced data security and compliance measures",
       "Customized automation solutions to streamline your operations",
       "Direct line to our top-tier experts for instant advice and support",
-      "First access to all innovations, products, and services"
+      "First access to all innovations, products, and services",
     ],
     monthlyPrice: 45000,
     yearlyPrice: 540000,
@@ -85,7 +83,8 @@ const demoPrices = [
   {
     id: "price_6",
     name: "Custom Enterprise Solutions Plan",
-    description: "Tailored for enterprises with a minimum of $5M+ in annual revenue, offering bespoke solutions for sustained growth.",
+    description:
+      "Tailored for enterprises with a minimum of $5M+ in annual revenue, offering bespoke solutions for sustained growth.",
     features: [
       "Completely custom-tailored growth strategies designed around your unique business needs",
       "Dedicated senior-level consultants and a specialized team assigned exclusively to your account",
@@ -96,7 +95,7 @@ const demoPrices = [
       "Executive-level workshops, training, and strategy sessions tailored to your leadership team",
       "Customized reporting, analytics, and data visualization tools built specifically for your business",
       "Exclusive partnership opportunities and introductions within our VIP client network",
-      "Continuous innovation with direct input into product development tailored for your needs"
+      "Continuous innovation with direct input into product development tailored for your needs",
     ],
     monthlyPrice: 83333,
     yearlyPrice: 1000000,
@@ -206,11 +205,17 @@ export default function PricingSection() {
                 }}
                 className="flex flex-row gap-1"
               >
-                <span className="text-4xl font-bold text-black dark:text-white">
-                  $
-                  {interval === "year"
-                    ? toHumanPrice(price.yearlyPrice, 0)
-                    : toHumanPrice(price.monthlyPrice, 0)}
+                <span className="text-3xl font-bold text-black dark:text-white">
+                  {price.id === "price_6" ? (
+                    "Custom Price"
+                  ) : (
+                    <>
+                      $
+                      {interval === "year"
+                        ? toHumanPrice(price.yearlyPrice, 0)
+                        : toHumanPrice(price.monthlyPrice, 0)}
+                    </>
+                  )}
                   <span className="text-xs"> / {interval}</span>
                 </span>
               </motion.div>
