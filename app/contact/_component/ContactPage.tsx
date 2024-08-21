@@ -4,7 +4,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { Scrollbar } from "smooth-scrollbar-react";
 import ContactPageButton from "./ContactButton";
 import AnimatedCursor from "react-animated-cursor";
-import { Button } from "@/components/ui/button";
+import WordPullUp from "@/components/magicui/word-pull-up";
 
 interface ContactFormData {
   name: string;
@@ -18,7 +18,12 @@ const ContactPage = () => {
   const [selectedProject, setSelectedProject] = useState<string[]>([]);
   const [selectedBudget, setSelectedBudget] = useState<string | null>(null);
 
-  const { register, handleSubmit, setValue, formState: { errors } } = useForm<ContactFormData>();
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    formState: { errors },
+  } = useForm<ContactFormData>();
 
   const handleSelectProject = (label: string) => {
     setSelectedProject((prevSelectedProject) =>
@@ -48,7 +53,7 @@ const ContactPage = () => {
     };
 
     console.log(formData, "Here is the formdata");
-    
+
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -79,13 +84,7 @@ const ContactPage = () => {
     "Mobile Develop",
   ];
 
-  const budgets = [
-    "10-20k",
-    "30-40k",
-    "40-50k",
-    "50-100k",
-    ">100k",
-  ];
+  const budgets = ["10-20k", "30-40k", "40-50k", "50-100k", ">100k"];
 
   return (
     <Scrollbar
@@ -97,17 +96,17 @@ const ContactPage = () => {
     >
       <div className="">
         <div className=" ">
-          <h1 className=" text-5xl md:text-[100px] leading-snug text-center md:text-left text-gray-400">
-            Hey!{" "}
-            <span className="font-bold text-white">
-              Tell us all <br />
-              the things 👋
-            </span>
-          </h1>
+          
+          <WordPullUp
+            className="text-5xl font-bold tracking-[-0.02em] leading-snug text-black dark:text-white md:text-7xl md:leading-[5rem]"
+            words="Hey! Tell Us All The Things 👋 "
+          />
 
           <div className="mt-32">
             <form onSubmit={handleSubmit(onSubmit)}>
-              <p className="text-3xl my-5 text-center md:text-left text-gray-400">I &apos;m interested in...</p>
+              <p className="text-3xl my-5 text-center md:text-left text-gray-400">
+                I &apos;m interested in...
+              </p>
               <div className="flex flex-wrap gap-4 ml-2 md:ml-0">
                 {projects.map((project) => (
                   <ContactPageButton
@@ -125,24 +124,30 @@ const ContactPage = () => {
                   className="w-full border-b-2 bg-transparent text-4xl py-3 px-2 outline-none uppercase focus:border-white transition-all ease-in duration-300"
                   {...register("name", { required: true })}
                 />
-                {errors.name && <p className="text-red-500">Name is required</p>}
-                
+                {errors.name && (
+                  <p className="text-red-500">Name is required</p>
+                )}
+
                 <input
                   type="email"
                   placeholder="Email"
                   className="w-full border-b-2 bg-transparent text-4xl py-3 px-2 outline-none uppercase focus:border-white transition-all ease-in duration-300"
                   {...register("email", { required: true })}
                 />
-                {errors.email && <p className="text-red-500">Email is required</p>}
-                
-                <textarea                
+                {errors.email && (
+                  <p className="text-red-500">Email is required</p>
+                )}
+
+                <textarea
                   placeholder="Tell us about your project"
                   className="w-full border-b-2 bg-transparent text-4xl py-3 px-2 outline-none uppercase focus:border-white transition-all ease-in duration-300"
                   {...register("projectDetails")}
                 />
               </div>
               <div>
-                <p className="text-white text-center md:text-left text-4xl my-10">Project budget (USD)</p>
+                <p className="text-white text-center md:text-left text-4xl my-10">
+                  Project budget (USD)
+                </p>
                 <div className=" md:space-x-4 space-y-4 m-2 md:m-0 flex flex-col md:block ">
                   {budgets.map((budget) => (
                     <ContactPageButton
@@ -154,7 +159,10 @@ const ContactPage = () => {
                   ))}
                 </div>
               </div>
-              <button type="submit" className="mt-20 border text-3xl py-20 px-24 m-2 rounded-full">
+              <button
+                type="submit"
+                className="mt-20 border text-3xl py-20 px-24 m-2 rounded-full"
+              >
                 Send Request
               </button>
             </form>

@@ -6,6 +6,7 @@ import {
   ShieldCheckIcon,
 } from "@heroicons/react/solid";
 import ServiceCard from "./ServiceCard";
+import FlickeringGrid from "@/components/AnimationComponents/FlickeringGrid";
 
 const ServicesGrid: FC = () => {
   const services = [
@@ -36,17 +37,32 @@ const ServicesGrid: FC = () => {
   ];
 
   return (
-    <div className="relative  flex items-center justify-center p-4 mt-10 md:mt-0 ">
-      <div className="max-w-4xl w-full mx-auto transform -translate-y-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {services.map((service, index) => (
-            <ServiceCard
-              key={index}
-              icon={service.icon}
-              title={service.title}
-              description={service.description}
-            />
-          ))}
+    <div className=" flex w-full items-center justify-center  mt-10 md:mt-0 p-2">
+      <div className="relative h-full rounded-lg overflow-hidden border">
+        {/* Flickering Grid in the Background */}
+        <FlickeringGrid
+          className="z-0 absolute inset-0 h-full "
+          squareSize={12}
+          gridGap={6}
+          color="#6B7280"
+          maxOpacity={0.3}
+          flickerChance={0.1}
+          height={1400}
+          width={900}
+        />
+
+        {/* Content on Top */}
+        <div className="relative z-10 max-w-4xl w-full mx-auto ">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {services.map((service, index) => (
+              <ServiceCard
+                key={index}
+                icon={service.icon}
+                title={service.title}
+                description={service.description}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>

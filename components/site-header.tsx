@@ -12,7 +12,14 @@ import { ContactUsModal } from "@/components/NavbarComponents/ContactUsModal";
 import { CoolMode } from "@/components/magicui/cool-mode";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
-
+import {
+  FaHome,
+  FaInfoCircle,
+  FaServicestack,
+  FaTags,
+  FaBlog,
+  FaStar,
+} from "react-icons/fa";
 import {
   MenuItem,
   ProductItem,
@@ -195,7 +202,9 @@ export function SiteHeader() {
             >
               <div className="container flex h-[3.5rem] items-center justify-between px-4">
                 <Link className="text-md font-bold flex items-center" href="/">
-                  SEOIT
+                  <div className="w-24 mt-3 flex justify-center items-center">
+                    <img src="/logo.webp" alt="logo" />
+                  </div>
                 </Link>
 
                 <button className="md:hidden" onClick={toggleMenu}>
@@ -216,10 +225,10 @@ export function SiteHeader() {
                 >
                   <Link
                     href="/"
-                    className="block w-full py-2 text-xl text-gray-200 hover:text-white"
+                    className="flex w-full py-2  items-center  text-xl text-gray-200 hover:text-white"
                     onClick={handleMenuItemClick}
                   >
-                    Home
+                    <FaHome className="mr-2 text-greenTouch" /> Home
                   </Link>
                 </motion.li>
                 <motion.li
@@ -228,10 +237,10 @@ export function SiteHeader() {
                 >
                   <Link
                     href="/about"
-                    className="block w-full py-2 text-xl text-gray-200 hover:text-white"
+                    className="flex items-center w-full py-2 text-xl text-gray-200 hover:text-white"
                     onClick={handleMenuItemClick}
                   >
-                    About
+                    <FaInfoCircle className="mr-2 text-greenTouch" /> About
                   </Link>
                 </motion.li>
                 <motion.li
@@ -240,46 +249,49 @@ export function SiteHeader() {
                 >
                   <Link
                     href="/services"
-                    className="block w-full py-2 text-xl text-gray-200 hover:text-white"
+                    className=" w-full py-2 text-xl text-gray-200 hover:text-white"
                     onClick={handleMenuItemClick}
                   >
-                    <div className="text-xl">
-                      <MenuItem
-                        setActive={setActive}
-                        active={active}
-                        item="Services"
-                      >
-                        <div className="text-sm grid md:grid-cols-2 grid-cols-1 gap-10 p-4">
-                          <ProductItem
-                            onClick={handleMenuItemClick}
-                            title="About Page"
-                            href="/services"
-                            src="https://assets.aceternity.com/demos/algochurn.webp"
-                            description="Prepare for tech interviews like never before."
-                          />
-                          <ProductItem
-                            onClick={handleMenuItemClick}
-                            title="Tailwind Master Kit"
-                            href="/services"
-                            src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
-                            description="Production ready Tailwind css components for your next project"
-                          />
-                          <ProductItem
-                            onClick={handleMenuItemClick}
-                            title="Moonbeam"
-                            href="/services"
-                            src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
-                            description="Never write from scratch again. Go from idea to blog in minutes."
-                          />
-                          <ProductItem
-                            onClick={handleMenuItemClick}
-                            title="Rogue"
-                            href="/services"
-                            src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
-                            description="Respond to government RFPs, RFIs, and RFQs 10x faster using AI"
-                          />
-                        </div>
-                      </MenuItem>
+                    <div className="relative py-2 flex items-center">
+                      <FaServicestack className="mr-2 text-greenTouch" />
+                      <div className="text-xl">
+                        <MenuItem
+                          setActive={setActive}
+                          active={active}
+                          item="Services"
+                        >
+                          <div className="text-sm grid md:grid-cols-2 grid-cols-1 gap-10 p-4">
+                            <ProductItem
+                              onClick={handleMenuItemClick}
+                              title="About Page"
+                              href="/services"
+                              src="https://assets.aceternity.com/demos/algochurn.webp"
+                              description="Prepare for tech interviews like never before."
+                            />
+                            <ProductItem
+                              onClick={handleMenuItemClick}
+                              title="Tailwind Master Kit"
+                              href="/services"
+                              src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
+                              description="Production ready Tailwind css components for your next project."
+                            />
+                            <ProductItem
+                              onClick={handleMenuItemClick}
+                              title="Moonbeam"
+                              href="/services"
+                              src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
+                              description="Never write from scratch again. Go from idea to blog in minutes."
+                            />
+                            <ProductItem
+                              onClick={handleMenuItemClick}
+                              title="Rogue"
+                              href="/services"
+                              src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
+                              description="Respond to government RFPs, RFIs, and RFQs 10x faster using AI."
+                            />
+                          </div>
+                        </MenuItem>
+                      </div>
                     </div>
                   </Link>
                 </motion.li>
@@ -289,10 +301,10 @@ export function SiteHeader() {
                 >
                   <Link
                     href="/pricing"
-                    className="block w-full py-2 text-xl text-gray-200 hover:text-white"
+                    className="flex items-center w-full py-2 text-xl text-gray-200 hover:text-white"
                     onClick={handleMenuItemClick}
                   >
-                    Pricing
+                   <FaTags className="mr-2 text-greenTouch" /> Pricing
                   </Link>
                 </motion.li>
                 <motion.li
@@ -301,10 +313,10 @@ export function SiteHeader() {
                 >
                   <Link
                     href="/blogs"
-                    className="block w-full py-2 text-xl text-gray-200 hover:text-white"
+                    className="flex items-center w-full py-2 text-xl text-gray-200 hover:text-white"
                     onClick={handleMenuItemClick}
                   >
-                    Blogs
+                  <FaBlog className="mr-2 text-greenTouch" />  Blogs
                   </Link>
                 </motion.li>
                 <motion.li
@@ -313,10 +325,10 @@ export function SiteHeader() {
                 >
                   <Link
                     href="/reviews"
-                    className="block w-full py-2 text-xl text-gray-200 hover:text-white"
+                    className="flex items-center w-full py-2 text-xl text-gray-200 hover:text-white"
                     onClick={handleMenuItemClick}
                   >
-                    Reviews
+                   <FaStar className="mr-2 text-greenTouch" /> Reviews
                   </Link>
                 </motion.li>
 

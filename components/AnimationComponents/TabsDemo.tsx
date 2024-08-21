@@ -10,7 +10,7 @@ export function TabsDemo() {
       value: "product",
       content: (
         <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-lime-200 to-lime-300">
-          <p className="text-black">Cool Shit We Made Tab</p>
+          <p className="text-black">Cool Shit We Made</p>
           <DummyContent />
         </div>
       ),
@@ -26,11 +26,11 @@ export function TabsDemo() {
       ),
     },
     {
-      title: "IT",
+      title: "iT",
       value: "playground",
       content: (
         <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-lime-200 to-lime-300">
-          <p className="text-black">IT Tab</p>
+          <p className="text-black">iT</p>
           <DummyContent />
         </div>
       ),
@@ -40,7 +40,7 @@ export function TabsDemo() {
       value: "content",
       content: (
         <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-lime-200 to-lime-300">
-          <p className="text-black">SOCIAL tab</p>
+          <p className="text-black">SOCIAL</p>
           <DummyContent />
         </div>
       ),
@@ -50,7 +50,7 @@ export function TabsDemo() {
       value: "random",
       content: (
         <div className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-lime-200 to-lime-300s">
-          <p className="text-black">Growth Hacking Tab</p>
+          <p className="text-black">Growth Hacking</p>
           <DummyContent />
         </div>
       ),

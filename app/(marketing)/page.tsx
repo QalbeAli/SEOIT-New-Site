@@ -2,6 +2,7 @@ import { AnimatedGradientTextDemo } from "@/components/AnimationComponents/Anima
 import { BentoDemo } from "@/components/AnimationComponents/BentoDemo";
 import { InfiniteMovingCardsDemo } from "@/components/AnimationComponents/InfiniteMovingCardsDemo";
 import { TabsDemo } from "@/components/AnimationComponents/TabsDemo";
+import FlickeringGridRoundedDemo from "@/components/example/flickering-grid-rounded-demo";
 import Brand from "@/components/HomePageComponents/Brand";
 import CallToAction from "@/components/HomePageComponents/CallToAction";
 import Competition from "@/components/HomePageComponents/Competition";
@@ -40,6 +41,7 @@ export default async function Page() {
       <ProjectCardsCarousel />
       {/* <InTouch /> */}
       <Testimonials />
+      <FlickeringGridRoundedDemo />
       <CallToActionSection />
       <Particles
         className="absolute inset-0 -z-10"

@@ -170,16 +170,16 @@ export default function CallToActionSection() {
                 <Card key={idx} {...review} />
               ))}
             </Marquee>
-            <div className="absolute z-10">
-              <div className="mx-auto size-24 rounded-[2rem] border bg-white/10 p-3 shadow-2xl backdrop-blur-md dark:bg-black/10 lg:size-32">
+            <div className="absolute z-10 w-full px-4 md:px-0">
+              <div className="mx-auto w-full max-w-xs md:max-w-md lg:max-w-lg xl:max-w-xl size-24 rounded-[2rem] border bg-white/10 p-3 shadow-2xl backdrop-blur-md dark:bg-black/10 lg:size-32">
                 <HeartHandshake className="mx-auto size-16 text-black dark:text-white lg:size-24" />
               </div>
               <div className="z-10 mt-4 flex flex-col items-center text-center text-primary">
-                <h1 className="text-3xl font-bold lg:text-4xl">
-                Ready to create cool shit that works?
+                <h1 className="text-2xl font-bold sm:text-3xl md:text-4xl lg:text-5xl">
+                  Ready to create cool stuff that works?
                 </h1>
-                <p className="mt-2">
-                Supercharge your business growth with our all-in-one platform.
+                <p className="mt-2 text-sm sm:text-base md:text-lg lg:text-xl">
+                  Supercharge your business growth with our all-in-one platform.
                 </p>
                 <Link
                   href="/contact"
@@ -188,15 +188,16 @@ export default function CallToActionSection() {
                       size: "lg",
                       variant: "outline",
                     }),
-                    "group mt-4 rounded-[2rem] p-6"
+                    "group mt-4 rounded-[2rem] p-4 md:p-6 text-wrap py-8 md:py-6"
                   )}
                 >
                   Book Free Business Growth Hacking Strategy Meeting
                   <ChevronRight className="ml-1 size-4 transition-all duration-300 ease-out group-hover:translate-x-1" />
                 </Link>
               </div>
-              <div className="absolute inset-0 -z-10 rounded-full  bg-backtround opacity-40 blur-xl dark:bg-background" />
+              <div className="absolute inset-0 -z-10 rounded-full bg-background opacity-40 blur-xl dark:bg-background" />
             </div>
+
             <div className="absolute inset-x-0 bottom-0 h-full bg-gradient-to-b from-transparent to-backtround to-70% dark:to-background" />
           </div>
         </div>
