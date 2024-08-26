@@ -9,6 +9,7 @@ import { ShootingStars } from "@/components/ui/shooting-stars";
 import { StarsBackground } from "@/components/ui/stars-background";
 import { SphereMask } from "@/components/magicui/sphere-mask";
 import { BentoDemo } from "@/components/AnimationComponents/BentoDemo";
+import SplineCube from '@/components/SplineComponents/SplineCube'
 
 const About = () => {
   return (
@@ -16,6 +17,7 @@ const About = () => {
     <div className='my-20'>
       <AboutStory />
       <Motto />
+      <SplineCube />
       <SphereMask />
       <MoreService />
       <BentoDemo />

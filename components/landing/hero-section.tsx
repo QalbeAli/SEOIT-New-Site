@@ -21,8 +21,8 @@ export default function HeroSection() {
       className="relative mx-auto mt-32 max-w-[80rem] px-6 text-center md:px-8"
     >
       <h1 className="bg-gradient-to-br dark:from-white from-black from-0% dark:to-white/40 to-black/40 bg-clip-text py-6 text-3xl font-medium leading-none tracking-tighter text-transparent text-balance sm:text-6xl md:text-7xl lg:text-8xl translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:200ms]">
-        All Your Growth Hacking Deliverables
-        <br className="hidden md:block" />in 1 Platform
+        All Your Growth <br /> Hacking Deliverables
+        <br className="hidden md:block" /> in 1 Platform
       </h1>
       <p className="mb-12 text-lg tracking-tight text-gray-400 md:text-xl text-balance translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:400ms]">
         Growth Hacking Strategies That Drive Revenue and Scale Your Business
@@ -36,7 +36,7 @@ export default function HeroSection() {
           onClick={() => {}}
         />
       </div>
-      <div
+      {/* <div
         ref={ref}
         className="relative mt-[8rem] animate-fade-up opacity-0 [--animation-delay:400ms] [perspective:2000px] after:absolute after:inset-0 after:z-50 after:[background:linear-gradient(to_top,hsl(var(--background))_30%,transparent)]"
       >
@@ -64,7 +64,7 @@ export default function HeroSection() {
             className="block relative w-full h-full  rounded-[inherit] border object-contain dark:hidden"
           />
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }

@@ -52,7 +52,6 @@ const ContactPage = () => {
       budget: selectedBudget,
     };
 
-    console.log(formData, "Here is the formdata");
 
     try {
       const response = await fetch("/api/contact", {

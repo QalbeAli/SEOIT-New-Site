@@ -1,8 +1,10 @@
 import { AnimatedGradientTextDemo } from "@/components/AnimationComponents/AnimatedGradientTextDemo";
 import { BentoDemo } from "@/components/AnimationComponents/BentoDemo";
+import Circle from "@/components/AnimationComponents/Circle";
+import FolderIcon from "@/components/ProjectPageComponents/Awards";
+import ImageWithLoader from "@/components/AnimationComponents/ImageWithLoader";
 import { InfiniteMovingCardsDemo } from "@/components/AnimationComponents/InfiniteMovingCardsDemo";
 import { TabsDemo } from "@/components/AnimationComponents/TabsDemo";
-import FlickeringGridRoundedDemo from "@/components/example/flickering-grid-rounded-demo";
 import Brand from "@/components/HomePageComponents/Brand";
 import CallToAction from "@/components/HomePageComponents/CallToAction";
 import Competition from "@/components/HomePageComponents/Competition";
@@ -19,29 +21,25 @@ import CallToActionSection from "@/components/landing/cta-section";
 import HeroSection from "@/components/landing/hero-section";
 import Particles from "@/components/magicui/particles";
 import { SphereMask } from "@/components/magicui/sphere-mask";
+import SplineHero from "@/components/SplineComponents/SplineHero";
+import { HomeFeatures } from "@/components/HomePageComponents/HomeFeatures";
 
 export default async function Page() {
   return (
     <>
       <AnimatedGradientTextDemo />
+      <SplineHero />
       <HeroSection />
+      <HomeFeatures />
       <ClientSection />
       <SphereMask />
-      {/* <Brand /> */}
-      {/* <MarketingSection /> */}
       <BentoDemo />
-
-      {/* <MarketingService /> */}
       <TabsDemo />
-      {/* <Competition />
-      <LeadGeneration /> */}
       <PerformanceStats />
       <Marketing />
       <CallToAction />
       <ProjectCardsCarousel />
-      {/* <InTouch /> */}
       <Testimonials />
-      <FlickeringGridRoundedDemo />
       <CallToActionSection />
       <Particles
         className="absolute inset-0 -z-10"

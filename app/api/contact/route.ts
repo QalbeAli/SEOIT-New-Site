@@ -16,9 +16,7 @@ export  async function POST(req: NextRequest, res: NextResponse) {
    
     const { name, email, projectDetails, projects, budget }: FormData = await req.json()
 
-    console.log({
-      name, email, projectDetails, projects, budget
-    })
+   
     // Configure the Nodemailer transporter
     const transporter = nodemailer.createTransport({
       service: 'gmail', // Use your preferred email service
