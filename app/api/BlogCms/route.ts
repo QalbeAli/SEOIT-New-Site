@@ -1,59 +1,28 @@
-import { GraphQLClient, gql } from "graphql-request";
-import { revalidatePath } from "next/cache";
+// app/api/BlogCms/route.ts
 
-const graphCms = new GraphQLClient(
-  "https://ap-south-1.cdn.hygraph.com/content/cm06ss2nu033r07w4itqdq9j2/master"
-);
+import { revalidatePath } from 'next/cache';
+import { NextResponse } from 'next/server';
+import { fetchPosts } from '@/lib/fetchPosts';
 
-const Query = gql`
-  query {
-    posts {
-      id
-      title
-      datePublished
-      slug
-      description
-      content {
-        text
-      }
-      coverPhoto {
-        url
-      }
-    }
-  }
-`;
-
-interface CoverPhoto {
-  url: string;
-}
-// Define types
-interface Post {
-  id: string;
-  title: string;
-  datePublished: string;
-  description: string;
-  coverPhoto: CoverPhoto[];
-  content: { text: string };
-  slug: string;
-  url: string;
-}
-
-interface PostsResponse {
-  posts: Post[];
-}
-
-// Fetch data on the server
-export async function fetchPosts(): Promise<PostsResponse> {
+export async function GET() {
   try {
-    const data = await graphCms.request<PostsResponse>(Query);
-    return data;
+    const data = await fetchPosts();
+    return NextResponse.json(data);
   } catch (error) {
-    console.error("Error fetching data:", error);
-    return { posts: [] }; // Return an empty array in case of an error
+    console.error('Error fetching posts:', error);
+    return NextResponse.json({ error: 'Failed to fetch posts' }, { status: 500 });
   }
 }
 
-export const revalidatePosts = async () => {
-  await fetchPosts(); // Fetch the posts to ensure data is up-to-date
-  revalidatePath("/blogs"); // Revalidate the homepage or the specific path
-};
+// Optional: Handle POST request to revalidate cache
+
+export async function POST() {
+  try {
+    await fetchPosts(); // Optionally fetch posts or perform other actions
+    revalidatePath("/blogs"); // Revalidate the specific path
+    return NextResponse.json({ message: 'Cache revalidated' });
+  } catch (error) {
+    console.error('Error revalidating cache:', error);
+    return NextResponse.json({ error: 'Failed to revalidate cache' }, { status: 500 });
+  }
+}

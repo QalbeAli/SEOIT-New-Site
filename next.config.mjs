@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["picsum.photos", "images.unsplash.com", "assets.aceternity.com"],
+    domains: ["picsum.photos", "images.unsplash.com", "assets.aceternity.com", "ap-south-1.graphassets.com"],
     remotePatterns: [
       { hostname: "unsplash.com" },
       { hostname: "images.unsplash.com" },
