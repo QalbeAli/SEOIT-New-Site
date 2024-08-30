@@ -17,7 +17,7 @@ import { BlurImage } from "@/components/blur-image";
 export const Tools = () => {
   const content = [
     {
-      icon: <IconMailForward className="h-8 w-8 text-secondary" />,
+      icon: <IconMailForward className="h-8 w-8 text-lime-200" />,
       title: "Cool Shit We Made",
       description:
         "With our best in class email automation, you can automate your entire emailing process.",
@@ -34,7 +34,7 @@ export const Tools = () => {
       ),
     },
     {
-      icon: <IconSocial className="h-8 w-8 text-secondary" />,
+      icon: <IconSocial className="h-8 w-8 text-lime-200" />,
       title: "SEO",
       description:
         "With our cross platform marketing, you can reach your audience on all the platforms they use.",
@@ -51,7 +51,7 @@ export const Tools = () => {
       ),
     },
     {
-      icon: <IconTerminal className="h-8 w-8 text-secondary" />,
+      icon: <IconTerminal className="h-8 w-8 text-lime-200" />,
       title: "iT",
       description:
         "With our managed CRM, you can manage your leads and contacts in one place.",
@@ -68,7 +68,7 @@ export const Tools = () => {
       ),
     },
     {
-      icon: <IconTerminal className="h-8 w-8 text-secondary" />,
+      icon: <IconTerminal className="h-8 w-8 text-lime-200" />,
       title: "Social",
       description:
         "We have cloned zapier and built our very own apps automation platform.",
@@ -85,7 +85,7 @@ export const Tools = () => {
       ),
     },
     {
-      icon: <IconTerminal className="h-8 w-8 text-secondary" />,
+      icon: <IconTerminal className="h-8 w-8 text-lime-200" />,
       title: "Growth Hacking",
       description:
         "We have cloned zapier and built our very own apps automation platform.",
@@ -146,7 +146,7 @@ export const Tools = () => {
           <IconTool className="h-6 w-6 text-cyan-500" />
         </FeatureIconContainer>
         <Heading className="mt-4">Perfect set of tools</Heading>
-        <Subheading>
+        <Subheading className="text-white">
           Proactiv comes with perfect tools for the perfect jobs out there.
         </Subheading>
       </div>

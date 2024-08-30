@@ -31,25 +31,26 @@ const Marketing = () => {
 
   return (
     <>
-      
-      <div className="p-8  flex items-center justify-center">
-        <div className="max-w-6xl w-full">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className=" p-2 rounded-lg  flex flex-col items-center"
-              >
-                <div className="mb-4 p-4 rounded-full bg-[#d6fc5b]">
-                  {service.icon}
-                </div>
-                <h3 className="text-xl font-bold text-white">
-                  {service.title}
-                </h3>
-                <p className="text-white mt-2">{service.description}</p>
+      <div className="p-16 rounded-xl w-full max-w-6xl mx-auto border-4 shadow-xl mt-10 ">
+        <div className="mb-16">
+          <h3 className=" text-4xl font-bold mb-3">
+            Designed for business teams like yours
+          </h3>
+          <p>
+            Here at Flowbite we focus on markets where technology, innovation,
+            and capital can unlock long-term value and drive economic growth.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, index) => (
+            <div key={index} className="p-2 rounded-lg">
+              <div className="mb-4 p-4 rounded-full w-fit bg-[#d6fc5b]">
+                {service.icon}
               </div>
-            ))}
-          </div>
+              <h3 className="text-xl font-bold text-white">{service.title}</h3>
+              <p className="mt-2 text-gray-300">{service.description}</p>
+            </div>
+          ))}
         </div>
       </div>
     </>
