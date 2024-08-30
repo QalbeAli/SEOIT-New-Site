@@ -168,7 +168,7 @@ const ContactPage = () => {
           </div>
         </div>
       </div>
-      <AnimatedCursor
+      {/* <AnimatedCursor
         color="255, 255, 255, 0.3" // Cursor color in RGB format
         innerSize={8} // Size of the inner cursor
         outerSize={0} // Size of the outer cursor
@@ -177,7 +177,7 @@ const ContactPage = () => {
         outerScale={10} // Scale of the outer cursor
         innerStyle={{}}
         clickables={["button", "a", "h1"]} // Elements that trigger cursor animations
-      />
+      /> */}
     </Scrollbar>
   );
 };

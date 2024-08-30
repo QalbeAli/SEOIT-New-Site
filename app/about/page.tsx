@@ -10,6 +10,7 @@ import { StarsBackground } from "@/components/ui/stars-background";
 import { SphereMask } from "@/components/magicui/sphere-mask";
 import { BentoDemo } from "@/components/AnimationComponents/BentoDemo";
 import SplineCube from '@/components/SplineComponents/SplineCube'
+import { HomeFeatures } from '@/components/HomePageComponents/HomeFeatures'
 
 const About = () => {
   return (
@@ -20,8 +21,8 @@ const About = () => {
       <SplineCube />
       <SphereMask />
       <MoreService />
-      <BentoDemo />
-
+      {/* <BentoDemo /> */}
+      <HomeFeatures />
       {/* <CardGrid /> */}
       <Team />
       <ProfileGrid />

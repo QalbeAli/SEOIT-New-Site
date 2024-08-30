@@ -1,18 +1,6 @@
 import { AnimatedGradientTextDemo } from "@/components/AnimationComponents/AnimatedGradientTextDemo";
-import { BentoDemo } from "@/components/AnimationComponents/BentoDemo";
-import Circle from "@/components/AnimationComponents/Circle";
-import FolderIcon from "@/components/ProjectPageComponents/Awards";
-import ImageWithLoader from "@/components/AnimationComponents/ImageWithLoader";
-import { InfiniteMovingCardsDemo } from "@/components/AnimationComponents/InfiniteMovingCardsDemo";
-import { TabsDemo } from "@/components/AnimationComponents/TabsDemo";
-import Brand from "@/components/HomePageComponents/Brand";
 import CallToAction from "@/components/HomePageComponents/CallToAction";
-import Competition from "@/components/HomePageComponents/Competition";
-import InTouch from "@/components/HomePageComponents/InTouch";
-import LeadGeneration from "@/components/HomePageComponents/LeadGeneration";
 import Marketing from "@/components/HomePageComponents/Marketing";
-import MarketingSection from "@/components/HomePageComponents/MarketingSection";
-import MarketingService from "@/components/HomePageComponents/MarketingService";
 import PerformanceStats from "@/components/HomePageComponents/PerformanceStats";
 import { ProjectCardsCarousel } from "@/components/HomePageComponents/ProjectCardsCarousel";
 import Testimonials from "@/components/HomePageComponents/Testimonials";
@@ -23,6 +11,7 @@ import Particles from "@/components/magicui/particles";
 import { SphereMask } from "@/components/magicui/sphere-mask";
 import SplineHero from "@/components/SplineComponents/SplineHero";
 import { HomeFeatures } from "@/components/HomePageComponents/HomeFeatures";
+import { Tools } from "@/components/AnimationComponents/Tools";
 
 export default async function Page() {
   return (
@@ -30,11 +19,12 @@ export default async function Page() {
       <AnimatedGradientTextDemo />
       <SplineHero />
       <HeroSection />
-      <HomeFeatures />
+      <HomeFeatures />  
       <ClientSection />
       <SphereMask />
-      <BentoDemo />
-      <TabsDemo />
+      {/* <BentoDemo /> */}
+      {/* <TabsDemo /> */}
+      <Tools />
       <PerformanceStats />
       <Marketing />
       <CallToAction />

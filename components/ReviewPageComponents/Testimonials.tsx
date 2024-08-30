@@ -11,7 +11,7 @@ import Image from "next/image";
 import { TestimonialsGrid } from "@/components/ReviewPageComponents/testimonials/grid";
 import { AmbientColor } from "@/components/ui/ambient-color";
 
-export const Testimonials = () => {
+export const NewTestimonials = () => {
   return (
     <div className="relative">
       <AmbientColor />

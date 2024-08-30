@@ -19,23 +19,11 @@ export function ProjectCardsCarousel() {
       <div className="relative flex h-[250px] w-full items-center justify-center overflow-hidden rounded-lg bg-background p-20 md:shadow-xl">
         <section className=" py-12 md:py-24">
           <div className="container mx-auto text-center">
-           
             <h1 className="text-3xl md:text-5xl font-bold text-white my-4">
               Our Projects
             </h1>
-           
           </div>
         </section>
-        <AnimatedGridPattern
-          numSquares={30}
-          maxOpacity={0.1}
-          duration={3}
-          repeatDelay={1}
-          className={cn(
-            "[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]",
-            "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12"
-          )}
-        />
       </div>
 
       <Carousel items={cards} />

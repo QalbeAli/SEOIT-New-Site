@@ -45,7 +45,7 @@ const Wrapper = () => {
           ease: [0.6, 0.05, 0.1, 0.9],
           duration: 0.8,
         }}
-        className="  fixed top-4 flex justify-center items-center  mx-auto inset-x-0 z-50 w-full"
+        className="  fixed top-7 flex justify-center items-center  mx-auto inset-x-0 z-50 w-full"
       >
         <DesktopNavbar navItems={navItems} />
       </motion.nav>

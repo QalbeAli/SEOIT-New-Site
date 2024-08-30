@@ -14,6 +14,7 @@ import { Link } from "next-view-transitions";
 import { useRouter } from "next/navigation";
 import { CoolMode } from "@/components/magicui/cool-mode";
 import { AlignJustify, XIcon } from "lucide-react";
+import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
 
 import {
   FaHome,
@@ -121,7 +122,7 @@ export const DesktopNavbar = ({ navItems }: Props) => {
   return (
     <motion.div
       className={cn(
-        "w-full flex  justify-center items-center px-4 py-3 rounded-md  transition duration-200 bg-transparent "
+        "w-full flex  justify-center items-center px-4 py-3 rounded-full  transition duration-200 bg-transparent "
       )}
       animate={{
         width: showBackground ? "70%" : "100%",
@@ -212,13 +213,13 @@ export const DesktopNavbar = ({ navItems }: Props) => {
                     <button className="bg-white">Touch me, I dare you!</button>
                   </CoolMode> */}
             <CoolMode>
-              <button className="bg-white py-1.5 rounded-md text-black font-semibold px-2">
-                I Dare You! 😈
+              <button className="bg-white py-1.5 rounded-full text-black font-semibold px-3">
+                Touch me!
               </button>
             </CoolMode>
             <Button
               onClick={handleContactPage}
-              className="bg-greenTouch font-semibold"
+              className="bg-greenTouch rounded-full font-semibold"
             >
               Contact Us
             </Button>
@@ -242,184 +243,166 @@ export const DesktopNavbar = ({ navItems }: Props) => {
       {/* Mobile Navigation */}
       <AnimatePresence>
         {hamburgerMenuIsOpen && (
-          <div className=" ">
-            <motion.nav
+          <motion.nav
+            initial="initial"
+            exit="exit"
+            variants={mobilenavbarVariant}
+            animate={hamburgerMenuIsOpen ? "animate" : "exit"}
+            className="fixed inset-0 z-50 h-screen w-full overflow-auto bg-black "
+          >
+            <div className="container flex h-[3.5rem] items-center justify-between px-4">
+              <Link className="text-md font-bold flex items-center" href="/">
+                <div className="w-24 mt-1.5 flex justify-center items-center">
+                  <img src="/logo.webp" alt="logo" />
+                </div>
+              </Link>
+
+              <button className="md:hidden" onClick={toggleMenu}>
+                <span className="sr-only">Toggle menu</span>
+                {hamburgerMenuIsOpen ? <XIcon /> : <AlignJustify />}
+              </button>
+            </div>
+
+            <motion.ul
+              className="flex flex-col items-start px-4 mt-4 space-y-4 uppercase md:normal-case"
+              variants={containerVariants}
               initial="initial"
-              exit="exit"
-              variants={mobilenavbarVariant}
-              animate={hamburgerMenuIsOpen ? "animate" : "exit"}
-              className="fixed inset-0   z-50 h-screen w-full overflow-auto bg-background/70 backdrop-blur-[12px]"
+              animate={hamburgerMenuIsOpen ? "open" : "exit"}
             >
-              <div className="container flex h-[3.5rem] items-center justify-between px-4">
-                <Link className="text-md font-bold flex items-center" href="/">
-                  <div className="w-24 mt-3 flex justify-center items-center">
-                    <img src="/logo.webp" alt="logo" />
+              <motion.li
+                variants={mobileLinkVar}
+                className="w-full border-b border-gray-700"
+              >
+                <Link
+                  href="/"
+                  className="block w-full py-2 text-xl text-gray-200 hover:text-white"
+                  onClick={handleMenuItemClick}
+                >
+                  Home
+                </Link>
+              </motion.li>
+              <motion.li
+                variants={mobileLinkVar}
+                className="w-full border-b border-gray-700"
+              >
+                <Link
+                  href="/about"
+                  className="block w-full py-2 text-xl text-gray-200 hover:text-white"
+                  onClick={handleMenuItemClick}
+                >
+                  About
+                </Link>
+              </motion.li>
+              <motion.li
+                variants={mobileLinkVar}
+                className="w-full relative border-b border-gray-700"
+              >
+                <Link
+                  href="/services"
+                  className="block relative w-full py-2 text-xl text-gray-200 hover:text-white"
+                  onClick={handleMenuItemClick}
+                >
+                  <div className="text-xl">
+                    <MenuItem
+                      setActive={setActive}
+                      active={active}
+                      item="Services"
+                    >
+                      <div className="text-sm grid md:grid-cols-2 grid-cols-1 gap-10 p-4">
+                        <ProductItem
+                          onClick={handleMenuItemClick}
+                          title="About Page"
+                          href="/services"
+                          src="https://assets.aceternity.com/demos/algochurn.webp"
+                          description="Prepare for tech interviews like never before."
+                        />
+                        <ProductItem
+                          onClick={handleMenuItemClick}
+                          title="Tailwind Master Kit"
+                          href="/services"
+                          src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
+                          description="Production ready Tailwind css components for your next project"
+                        />
+                        <ProductItem
+                          onClick={handleMenuItemClick}
+                          title="Moonbeam"
+                          href="/services"
+                          src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
+                          description="Never write from scratch again. Go from idea to blog in minutes."
+                        />
+                        <ProductItem
+                          onClick={handleMenuItemClick}
+                          title="Rogue"
+                          href="/services"
+                          src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
+                          description="Respond to government RFPs, RFIs, and RFQs 10x faster using AI"
+                        />
+                      </div>
+                    </MenuItem>
                   </div>
                 </Link>
+              </motion.li>
+              <motion.li
+                variants={mobileLinkVar}
+                className="w-full border-b border-gray-700"
+              >
+                <Link
+                  href="/pricing"
+                  className="block w-full py-2 text-xl text-gray-200 hover:text-white"
+                  onClick={handleMenuItemClick}
+                >
+                  Pricing
+                </Link>
+              </motion.li>
+              <motion.li
+                variants={mobileLinkVar}
+                className="w-full border-b border-gray-700"
+              >
+                <Link
+                  href="/blogs"
+                  className="block w-full py-2 text-xl text-gray-200 hover:text-white"
+                  onClick={handleMenuItemClick}
+                >
+                  Blogs
+                </Link>
+              </motion.li>
+              <motion.li
+                variants={mobileLinkVar}
+                className="w-full border-b border-gray-700"
+              >
+                <Link
+                  href="/reviews"
+                  className="block w-full py-2 text-xl text-gray-200 hover:text-white"
+                  onClick={handleMenuItemClick}
+                >
+                  Reviews
+                </Link>
+              </motion.li>
 
-                <button className="md:hidden" onClick={toggleMenu}>
-                  <span className="sr-only">Toggle menu</span>
-                  {hamburgerMenuIsOpen ? <XIcon /> : <AlignJustify />}
-                </button>
-              </div>
-              <motion.ul
-                className="flex flex-col mx-4 bg-white rounded-2xl items-start px-4 mt-4 space-y-4 uppercase md:normal-case"
-                variants={containerVariants}
-                initial="initial"
-                animate={hamburgerMenuIsOpen ? "open" : "exit"}
+              <motion.li
+                variants={mobileLinkVar}
+                className="w-full border-b border-gray-700"
               >
-                <motion.li
-                  variants={mobileLinkVar}
-                  className="w-full  border-gray-700"
-                >
-                  <Link
-                    href="/projects"
-                    className="flex w-full py-2  items-center  text-xl   font-bold text-black"
-                    onClick={handleMenuItemClick}
-                  >
-                    <FaHome className="mr-2 text-lime-500" /> Projects
-                  </Link>
-                </motion.li>
-                <motion.li
-                  variants={mobileLinkVar}
-                  className="w-full  border-gray-700"
-                >
-                  <Link
-                    href="/about"
-                    className="flex items-center w-full py-2 text-xl  font-bold text-black"
-                    onClick={handleMenuItemClick}
-                  >
-                    <FaInfoCircle className="mr-2 text-lime-500" /> About
-                  </Link>
-                </motion.li>
-                <motion.li
-                  variants={mobileLinkVar}
-                  className="w-full  border-gray-700"
-                >
-                  <Link
-                    href="/services"
-                    className=" w-full py-2 text-xl  text-black"
-                    onClick={handleMenuItemClick}
-                  >
-                    <div className="relative py-2 flex items-center font-bold text-black">
-                      <FaServicestack className="mr-2 text-lime-500" />
-                      <div className="text-xl text-black">
-                        <MenuItem
-                          setActive={setActive}
-                          active={active}
-                          item="Services"
-                        >
-                          <div className="text-sm grid md:grid-cols-2 grid-cols-1 gap-10 p-4">
-                            <ProductItem
-                              onClick={handleMenuItemClick}
-                              title="About Page"
-                              href="/services"
-                              src="https://assets.aceternity.com/demos/algochurn.webp"
-                              description="Prepare for tech interviews like never before."
-                            />
-                            <ProductItem
-                              onClick={handleMenuItemClick}
-                              title="Tailwind Master Kit"
-                              href="/services"
-                              src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
-                              description="Production ready Tailwind css components for your next project."
-                            />
-                            <ProductItem
-                              onClick={handleMenuItemClick}
-                              title="Moonbeam"
-                              href="/services"
-                              src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
-                              description="Never write from scratch again. Go from idea to blog in minutes."
-                            />
-                            <ProductItem
-                              onClick={handleMenuItemClick}
-                              title="Rogue"
-                              href="/services"
-                              src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
-                              description="Respond to government RFPs, RFIs, and RFQs 10x faster using AI."
-                            />
-                          </div>
-                        </MenuItem>
-                      </div>
-                    </div>
-                  </Link>
-                </motion.li>
-                <motion.li
-                  variants={mobileLinkVar}
-                  className="w-full  border-gray-700"
-                >
-                  <Link
-                    href="/pricing"
-                    className="flex items-center w-full py-2 text-xl  font-bold text-black"
-                    onClick={handleMenuItemClick}
-                  >
-                    <FaTags className="mr-2 text-lime-500" /> Pricing
-                  </Link>
-                </motion.li>
-                <motion.li
-                  variants={mobileLinkVar}
-                  className="w-full  border-gray-700"
-                >
-                  <Link
-                    href="/blogs"
-                    className="flex items-center w-full py-2 text-xl  font-bold text-black"
-                    onClick={handleMenuItemClick}
-                  >
-                    <FaBlog className="mr-2 text-lime-500" /> Blogs
-                  </Link>
-                </motion.li>
-                <motion.li
-                  variants={mobileLinkVar}
-                  className="w-full  border-gray-700"
-                >
-                  <Link
-                    href="/reviews"
-                    className="flex items-center w-full py-2 text-xl font-bold  text-black"
-                    onClick={handleMenuItemClick}
-                  >
-                    <FaStar className="mr-2 text-lime-500" /> Reviews
-                  </Link>
-                </motion.li>
-              </motion.ul>
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8 }}
-                className="bg-white mt-5 mx-4 rounded-2xl px-11 text-white"
-              >
-                <div className="flex justify-center items-center py-6 flex-col md:flex-row space-y-2 md:space-y-0">
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                  >
-                    <CoolMode>
-                      <button className="bg-greenTouch py-1.5 rounded-md text-black font-semibold px-2">
-                        I Dare You! 😈
-                      </button>
-                    </CoolMode>
-                  </motion.div>
-                  <motion.button
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                    className="text-xl flex justify-between items-center bg-lime-200 text-black px-3  hover:bg-lime-100 space-x-2 rounded-md font-semibold"
+                <div className="flex justify-center items-center py-6  flex-col md:flex-row space-y-2 md:space-y-0">
+                  <CoolMode>
+                    <button className="text-lg bg-black border-2 border-white text-lime-200 px-3 py-0.5 rounded-full w-full font-semibold">
+                      <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
+                        Touch me!
+                      </AnimatedShinyText>
+                    </button>
+                  </CoolMode>
+                  <button
+                    className={cn(
+                      "text-2xl bg-black w-full border-2  border-lime-200 text-white px-3 py-0.5 rounded-full font-semibold"
+                    )}
                     onClick={handleContactPage}
                   >
-                    <div>Contact Us</div>
-                    <div className="mt-1">
-                      <img
-                        src="/contact.gif"
-                        alt="Mygif"
-                        width={64}
-                        height={64}
-                      />
-                    </div>
-                  </motion.button>
+                    Contact Us
+                  </button>
                 </div>
-              </motion.div>
-            </motion.nav>
-          </div>
+              </motion.li>
+            </motion.ul>
+          </motion.nav>
         )}
       </AnimatePresence>
     </motion.div>

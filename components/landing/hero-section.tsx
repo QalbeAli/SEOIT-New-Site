@@ -1,15 +1,7 @@
 "use client";
-
-import { BorderBeam } from "@/components/magicui/border-beam";
-import TextShimmer from "@/components/magicui/text-shimmer";
-import { Button } from "@/components/ui/button";
-import { ArrowRightIcon } from "@radix-ui/react-icons";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import InputButton from "../HomePageComponents/InputButton";
-import { HoverBorderGradient } from "../AnimationComponents/HoverBorderGradient";
-import SplineComponent from "../AnimationComponents/SplineComponent";
-import { AnimatedGradientTextDemo } from "../AnimationComponents/AnimatedGradientTextDemo";
+import Particles from "@/components/magicui/particles";
 import InputWithButton from "../HomePageComponents/InputWithButton";
 
 export default function HeroSection() {
@@ -65,6 +57,14 @@ export default function HeroSection() {
           />
         </div>
       </div> */}
+      <Particles
+        className="absolute inset-0 -z-10"
+        quantity={50}
+        ease={70}
+        size={0.05}
+        staticity={40}
+        color={"#ffffff"}
+      />
     </section>
   );
 }
