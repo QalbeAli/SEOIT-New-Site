@@ -1,10 +1,10 @@
-import Image from 'next/image';
+import Image from "next/image";
 
 type BlogCardProps = {
   title: string;
   date: string;
   description: string;
-  imageSrc: string;
+  imageSrc: any;
   altText: string;
   link: string;
 };

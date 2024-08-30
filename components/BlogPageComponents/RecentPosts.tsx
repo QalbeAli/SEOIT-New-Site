@@ -1,6 +1,7 @@
 import { sortBlogs } from "@/utils";
 import React from "react";
-import { FollowingPointer } from "@/components/AnimationComponents/FollowingPointer";
+import FollowingPointer from "../AnimationComponents/FollowingPointer";
+// import { FollowingPointer } from "@/components/AnimationComponents/FollowingPointer";
 
 const RecentPosts = () => {
   return (
@@ -19,7 +20,3 @@ const RecentPosts = () => {
 };
 
 export default RecentPosts;
-
-
-
-
