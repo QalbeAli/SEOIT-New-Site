@@ -1,5 +1,5 @@
 "use client"
-import React from "react";
+import React, { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import AnimatedCursor from "react-animated-cursor";
 interface ContactPageLayoutProps {
@@ -9,6 +9,17 @@ interface ContactPageLayoutProps {
 const ContactPageLayout = ({ children }: ContactPageLayoutProps) => {
   const pathname = usePathname();
   const isContactPage = pathname === "/contact";
+  useEffect(() => {
+    if (!isContactPage) {
+      // Reset cursor styles when leaving the contact page
+      document.body.style.cursor = "auto";
+    }
+
+    return () => {
+      // Cleanup function to reset cursor style when component unmounts
+      document.body.style.cursor = "auto";
+    };
+  }, [isContactPage]);
   return (
     <>
       <div>

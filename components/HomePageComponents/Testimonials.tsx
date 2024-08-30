@@ -3,11 +3,13 @@ import Image from "next/image";
 import { SparklesCore } from "../ui/sparkles";
 import { InfiniteMovingCardsDemo } from "../AnimationComponents/InfiniteMovingCardsDemo";
 import { FlipWords } from "../ui/flip-words";
+import { NewTestimonials } from "@/components/ReviewPageComponents/Testimonials";
+
 const Testimonials = () => {
   const words = ["Perfect", "Good", "Best", "Modern"];
   return (
     <>
-      <div className="text-center">
+      {/* <div className="text-center">
         <div className=" pt-16 w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
           <h1 className=" text-5xl py-2 font-bold text-center text-white relative z-20">
             Our Client Says <FlipWords words={words} /> <br />  
@@ -15,7 +17,8 @@ const Testimonials = () => {
          
         </div>
       </div>
-      <InfiniteMovingCardsDemo />
+      <InfiniteMovingCardsDemo /> */}
+      <NewTestimonials />
     </>
   );
 };

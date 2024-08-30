@@ -71,6 +71,24 @@ const config = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-2deg)' },
+          '50%': { transform: 'rotate(2deg)' },
+        },
+        colorShift: {
+          '0%, 100%': { borderColor: '#000000' },
+          '25%': { borderColor: '#FF6347' },
+          '50%': { borderColor: '#FFD700' },
+          '75%': { borderColor: '#4CAF50' },
+        },
+        "slide-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0px" },
+        },
+        "slide-down": {
+          from: { height: "0px" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -84,7 +102,7 @@ const config = {
             "offset-distance": "100%",
           },
         },
-        
+
         "image-glow": {
           "0%": {
             opacity: "0",
@@ -117,7 +135,7 @@ const config = {
             "background-position": "0% 0%",
           },
         },
-        meteor:{
+        meteor: {
           "0%": { transform: "rotate(215deg) translateX(0)", opacity: "1" },
           "70%": { opacity: "1" },
           "100%": {
@@ -125,12 +143,11 @@ const config = {
             opacity: "0",
           },
         },
-        "scroll":{
-          to:{
-            transform: "translate(calc(-50% - 0.5rem))",  
-          }
+        scroll: {
+          to: {
+            transform: "translate(calc(-50% - 0.5rem))",
+          },
         },
-        
 
         shimmer: {
           "0%, 90%, 100%": {
@@ -150,6 +167,8 @@ const config = {
         },
       },
       animation: {
+        wiggle: "wiggle 1s ease-in-out infinite",
+        colorShift: "colorShift 2s ease-in-out infinite",
         meteor: "meteor 5s linear infinite",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
@@ -160,7 +179,10 @@ const config = {
         shimmer: "shimmer 8s infinite",
         marquee: "marquee var(--duration) infinite linear",
         "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
-        scroll:"scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
+        scroll:
+          "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
+        "slide-down": "slide-down 300ms cubic-bezier(0.87, 0, 0.13, 1)",
+        "slide-up": "slide-up 300ms cubic-bezier(0.87, 0, 0.13, 1)",
         
       },
     },
