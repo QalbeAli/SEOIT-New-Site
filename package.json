@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "yarn && yarn build && vercel --prod"
+    "deploy": "yarn && yarn build && vercel --prod",
+    "push": "git add . && git commit -m \"Auto commit\" && git push origin main"
   },
   "dependencies": {
     "@headlessui/react": "^2.1.3",
