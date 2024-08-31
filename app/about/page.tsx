@@ -22,7 +22,7 @@ const About = () => {
       <SphereMask />
       <MoreService />
       {/* <BentoDemo /> */}
-      <HomeFeatures />
+      {/* <HomeFeatures /> */}
       {/* <CardGrid /> */}
       <Team />
       <ProfileGrid />

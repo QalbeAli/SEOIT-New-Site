@@ -1,117 +1,123 @@
-"use client";
-import React from "react";
-// import { calsans } from "@/fonts/calsans";
+import { useRouter } from "next/navigation";
+import { BlogWithSlug } from "@/lib/blog";
+import { IconArrowLeft } from "@tabler/icons-react";
+import { Container } from "../container";
 import Image from "next/image";
-import { twMerge } from "tailwind-merge";
-import { TracingBeam } from "./TracingBeam";
-
-export function BeamWorking() {
+import { Post } from "../../lib/blog";
+import Link from "next/link";
+import { format } from "date-fns";
+export function BeamWorking({ params }: { params: Post }) {
   return (
-    <TracingBeam className="px-6 py-12">
-      <div className="max-w-2xl mx-auto antialiased pt-4 relative">
-        {dummyContent.map((item, index) => (
-          <div key={`content-${index}`} className="mb-10">
-            <h2 className="bg-black text-white rounded-full text-sm w-fit px-4 py-1 mb-4">
-              {item.badge}
-            </h2>
-
-            <p className={twMerge("text-xl mb-4")}>
-              {item.title}
-            </p>
-
-            <div className="text-sm text-white prose prose-sm dark:prose-invert">
-              {item?.image && (
-                <Image
-                  src={item.image}
-                  alt="blog thumbnail"
-                  height="1000"
-                  width="1000"
-                  className="rounded-lg mb-10 object-cover"
-                />
-              )}
-              {item.description}
-            </div>
-          </div>
-        ))}
+    <Container className="mt-16 lg:mt-32">
+      <div className="flex justify-between items-center px-2 py-8">
+        <Link href="/blog" className="flex space-x-2 items-center">
+          <IconArrowLeft className="w-4 h-4 text-muted" />
+          <span className="text-sm text-muted">Back</span>
+        </Link>
       </div>
-    </TracingBeam>
+      <div className="w-full mx-auto">
+        {params.coverPhoto[0]?.url ? (
+          <Image
+            src={params.coverPhoto[0]?.url}
+            height="800"
+            width="800"
+            className="h-40 md:h-96 w-full aspect-square object-cover rounded-3xl [mask-image:radial-gradient(circle,white,transparent)]"
+            alt={params.title}
+          />
+        ) : (
+          <div className="h-40 md:h-96 w-full aspect-squace rounded-3xl shadow-derek bg-neutral-900 flex items-center justify-center"></div>
+        )}
+      </div>
+      <div className="xl:relative">
+        <div className="mx-auto max-w-2xl">
+          <article className="pb-8">
+            <header className="flex flex-col">
+              <h1 className="mt-8 text-4xl font-bold tracking-tight text-neutral-200 sm:text-5xl ">
+                {params.title}
+              </h1>
+            </header>
+            <div className="mt-8 prose prose-sm prose-invert" data-mdx-content>
+              {params.content.text}
+            </div>
+            <div className="flex space-x-2 items-center pt-12 border-t border-neutral-800 mt-12">
+              <div className="flex space-x-2 items-center ">
+                <Image
+                  src={params.coverPhoto[0]?.url}
+                  alt="SOmtimes better than nothing"
+                  width={20}
+                  height={20}
+                  className="rounded-full h-5 w-5"
+                />
+                <p className="text-sm font-normal text-muted"></p>
+              </div>
+              <div className="h-5 rounded-lg w-0.5 bg-neutral-700" />
+              <time
+                dateTime={params.datePublished}
+                className="flex items-center text-base "
+              >
+                <span className="text-muted text-sm">
+                  {format(new Date(params.datePublished), "MMMM dd, yyyy")}
+                </span>
+              </time>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div className="flex justify-between items-center px-2 py-8">
+        <Link href="/blog" className="flex space-x-2 items-center">
+          <IconArrowLeft className="w-4 h-4 text-muted" />
+          <span className="text-sm text-muted">Back</span>
+        </Link>
+      </div>
+      <div className="w-full mx-auto">
+        {params.coverPhoto[0]?.url ? (
+          <Image
+            src={params.coverPhoto[0]?.url}
+            height="800"
+            width="800"
+            className="h-40 md:h-96 w-full aspect-square object-cover rounded-3xl [mask-image:radial-gradient(circle,white,transparent)]"
+            alt={params.title}
+          />
+        ) : (
+          <div className="h-40 md:h-96 w-full aspect-squace rounded-3xl shadow-derek bg-neutral-900 flex items-center justify-center"></div>
+        )}
+      </div>
+      <div className="xl:relative">
+        <div className="mx-auto max-w-2xl">
+          <article className="pb-8">
+            <header className="flex flex-col">
+              <h1 className="mt-8 text-4xl font-bold tracking-tight text-neutral-200 sm:text-5xl ">
+                {params.title}
+              </h1>
+            </header>
+            <div className="mt-8 prose prose-sm prose-invert" data-mdx-content>
+              {params.content.text}
+            </div>
+            <div className="flex space-x-2 items-center pt-12 border-t border-neutral-800 mt-12">
+              <div className="flex space-x-2 items-center ">
+                <Image
+                  src={params.coverPhoto[0]?.url}
+                  alt="SOmtimes better than nothing"
+                  width={20}
+                  height={20}
+                  className="rounded-full h-5 w-5"
+                />
+                <p className="text-sm font-normal text-muted"></p>
+              </div>
+              <div className="h-5 rounded-lg w-0.5 bg-neutral-700" />
+              <time
+                dateTime={params.datePublished}
+                className="flex items-center text-base "
+              >
+                <span className="text-muted text-sm">
+                  {format(new Date(params.datePublished), "MMMM dd, yyyy")}
+                </span>
+              </time>
+            </div>
+          </article>
+        </div>
+      </div>
+    </Container>
   );
 }
-
-const dummyContent = [
-  {
-    title: "Lorem Ipsum Dolor Sit Amet",
-    description: (
-      <>
-        <p>
-          Sit duis est minim proident non nisi velit non consectetur. Esse
-          adipisicing laboris consectetur enim ipsum reprehenderit eu deserunt
-          Lorem ut aliqua anim do. Duis cupidatat qui irure cupidatat incididunt
-          incididunt enim magna id est qui sunt fugiat. Laboris do duis pariatur
-          fugiat Lorem aute sit ullamco. Qui deserunt non reprehenderit dolore
-          nisi velit exercitation Lorem qui do enim culpa. Aliqua eiusmod in
-          occaecat reprehenderit laborum nostrud fugiat voluptate do Lorem culpa
-          officia sint labore. Tempor consectetur excepteur ut fugiat veniam
-          commodo et labore dolore commodo pariatur.
-        </p>
-        <p>
-          Dolor minim irure ut Lorem proident. Ipsum do pariatur est ad ad
-          veniam in commodo id reprehenderit adipisicing. Proident duis
-          exercitation ad quis ex cupidatat cupidatat occaecat adipisicing.
-        </p>
-        <p>
-          Tempor quis dolor veniam quis dolor. Sit reprehenderit eiusmod
-          reprehenderit deserunt amet laborum consequat adipisicing officia qui
-          irure id sint adipisicing. Adipisicing fugiat aliqua nulla nostrud.
-          Amet culpa officia aliquip deserunt veniam deserunt officia
-          adipisicing aliquip proident officia sunt.
-        </p>
-      </>
-    ),
-    badge: "React",
-    image:
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=3540&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-  {
-    title: "Lorem Ipsum Dolor Sit Amet",
-    description: (
-      <>
-        <p>
-          Ex irure dolore veniam ex velit non aute nisi labore ipsum occaecat
-          deserunt cupidatat aute. Enim cillum dolor et nulla sunt exercitation
-          non voluptate qui aliquip esse tempor. Ullamco ut sunt consectetur
-          sint qui qui do do qui do. Labore laborum culpa magna reprehenderit ea
-          velit id esse adipisicing deserunt amet dolore. Ipsum occaecat veniam
-          commodo proident aliqua id ad deserunt dolor aliquip duis veniam sunt.
-        </p>
-        <p>
-          In dolore veniam excepteur eu est et sunt velit. Ipsum sint esse
-          veniam fugiat esse qui sint ad sunt reprehenderit do qui proident
-          reprehenderit. Laborum exercitation aliqua reprehenderit ea sint
-          cillum ut mollit.
-        </p>
-      </>
-    ),
-    badge: "Changelog",
-    image:
-      "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=3540&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-  {
-    title: "Lorem Ipsum Dolor Sit Amet",
-    description: (
-      <>
-        <p>
-          Ex irure dolore veniam ex velit non aute nisi labore ipsum occaecat
-          deserunt cupidatat aute. Enim cillum dolor et nulla sunt exercitation
-          non voluptate qui aliquip esse tempor. Ullamco ut sunt consectetur
-          sint qui qui do do qui do. Labore laborum culpa magna reprehenderit ea
-          velit id esse adipisicing deserunt amet dolore. Ipsum occaecat veniam
-          commodo proident aliqua id ad deserunt dolor aliquip duis veniam sunt.
-        </p>
-      </>
-    ),
-    badge: "Launch Week",
-    image:
-      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80&w=3506&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-];

@@ -1,6 +1,7 @@
 import React from "react";
 import RecentPosts from "@/components/BlogPageComponents/RecentPosts";
-const BlogPage = () => {
+
+const BlogPage = async () => {
   return (
     <>
       <div>
