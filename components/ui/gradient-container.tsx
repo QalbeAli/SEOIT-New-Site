@@ -12,9 +12,11 @@ import React, { CSSProperties, useRef, useState } from "react";
 export const GradientContainer = ({
   children,
   className,
-}: {
+}: // containerRef,
+{
   children: React.ReactNode;
   className?: string;
+  // containerRef: React.RefObject<HTMLDivElement>;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress, scrollY } = useScroll({
@@ -37,6 +39,7 @@ export const GradientContainer = ({
     setPercentage(newPercentage);
   });
   return (
+    // <div ref={containerRef}>
     <div
       ref={ref}
       style={
@@ -68,5 +71,6 @@ export const GradientContainer = ({
       />
       {children}
     </div>
+    // </div>
   );
 };

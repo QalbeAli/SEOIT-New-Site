@@ -213,9 +213,7 @@
   transform: rotate(45deg);
   transform-origin: top right;
   clip-path: polygon(0 0, 100% 0, 0 100%);
-  
 }
-
 
 .spline-design {
   pointer-events: none;
