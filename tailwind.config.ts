@@ -167,6 +167,7 @@ const config = {
         },
       },
       animation: {
+        move: "move 5s linear infinite",
         wiggle: "wiggle 1s ease-in-out infinite",
         colorShift: "colorShift 2s ease-in-out infinite",
         meteor: "meteor 5s linear infinite",

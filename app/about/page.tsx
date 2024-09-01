@@ -21,9 +21,6 @@ const About = () => {
       <SplineCube />
       <SphereMask />
       <MoreService />
-      {/* <BentoDemo /> */}
-      {/* <HomeFeatures /> */}
-      {/* <CardGrid /> */}
       <Team />
       <ProfileGrid />
       <ShootingStars />
