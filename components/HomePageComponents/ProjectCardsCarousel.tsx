@@ -6,16 +6,16 @@ import {
   Card,
 } from "@/components/AnimationComponents/AppleCardCarouselMain";
 import { SparklesCore } from "../ui/sparkles";
+import "swiper/css/autoplay";
 import AnimatedGridPattern from "@/components/magicui/animated-grid-pattern";
 import { cn } from "@/lib/utils";
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 
 export function ProjectCardsCarousel() {
-  const cards = data.map((card, index) => (
-    <Card key={card.src} card={card} index={index} />
-  ));
-
+  const swiper = useSwiper();
   return (
-    <div className="w-full h-full py-10">
+    <div className="relative w-full h-full py-10">
       <div className="relative flex h-[250px] w-full items-center justify-center overflow-hidden rounded-lg bg-background p-20 md:shadow-xl">
         <section className=" py-12 md:py-24">
           <div className="container mx-auto text-center">
@@ -26,7 +26,33 @@ export function ProjectCardsCarousel() {
         </section>
       </div>
 
-      <Carousel items={cards} />
+      <Swiper
+        modules={[Navigation, Pagination, Scrollbar, A11y]}
+        loop
+        autoplay
+        spaceBetween={20}
+        allowSlidePrev
+        allowTouchMove
+        allowSlideNext
+        slidesOffsetBefore={100}
+        breakpoints={{
+          300: {
+            slidesPerView: 2,
+          },
+          640: {
+            slidesPerView: 3,
+          },
+          1024: {
+            slidesPerView: 4,
+          },
+        }}
+      >
+        {data.map((card, index) => (
+          <SwiperSlide zoom key={index}>
+            <Card key={card.src} card={card} index={index} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 }

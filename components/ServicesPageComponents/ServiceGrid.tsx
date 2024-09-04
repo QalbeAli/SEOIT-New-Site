@@ -53,10 +53,11 @@ const ServicesGrid: FC = () => {
 
         {/* Content on Top */}
         <div className="relative z-10 max-w-4xl w-full mx-auto ">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-2">
             {services.map((service, index) => (
               <ServiceCard
                 key={index}
+                index={index}
                 icon={service.icon}
                 title={service.title}
                 description={service.description}

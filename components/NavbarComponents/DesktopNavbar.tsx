@@ -29,6 +29,7 @@ import {
   MenuItem,
   ProductItem,
 } from "@/components/AnimationComponents/NavbarMenu";
+import ContactUsButton from "../ContactUsButton";
 
 // Upper Are Imports
 
@@ -213,16 +214,17 @@ export const DesktopNavbar = ({ navItems }: Props) => {
                     <button className="bg-white">Touch me, I dare you!</button>
                   </CoolMode> */}
             <CoolMode>
-              <button className="bg-white py-1.5 rounded-full text-black font-semibold px-3">
+              <button className="congrats-button">
                 Touch me!
               </button>
             </CoolMode>
-            <Button
-              onClick={handleContactPage}
-              className="bg-greenTouch rounded-full font-semibold"
+            <div className="mt-5">
+
+            <ContactUsButton
             >
-              Contact Us
-            </Button>
+            </ContactUsButton>
+            </div>
+
           </div>
         </div>
 
@@ -385,20 +387,12 @@ export const DesktopNavbar = ({ navItems }: Props) => {
               >
                 <div className="flex justify-center items-center py-6  flex-col md:flex-row space-y-2 md:space-y-0">
                   <CoolMode>
-                    <button className="text-lg bg-black border-2 border-white text-lime-200 px-3 py-0.5 rounded-full w-full font-semibold">
-                      <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
-                        Touch me!
-                      </AnimatedShinyText>
+                    <button className="congrats-button w-full">
+                          Touch me!
                     </button>
                   </CoolMode>
-                  <button
-                    className={cn(
-                      "text-2xl bg-black w-full border-2  border-lime-200 text-white px-3 py-0.5 rounded-full font-semibold"
-                    )}
-                    onClick={handleContactPage}
-                  >
-                    Contact Us
-                  </button>
+                  <ContactUsButton>
+                  </ContactUsButton>
                 </div>
               </motion.li>
             </motion.ul>

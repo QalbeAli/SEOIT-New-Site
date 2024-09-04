@@ -10,6 +10,7 @@
     "deploy": "yarn && yarn build && vercel --prod"
   },
   "dependencies": {
+    "@calcom/embed-react": "^1.5.0",
     "@headlessui/react": "^2.1.3",
     "@heroicons/react": "v1",
     "@hookform/resolvers": "^3.3.4",
@@ -55,7 +56,8 @@
     "smooth-scrollbar-react": "^2.4.1",
     "sonner": "^1.4.41",
     "stripe": "^16.5.0",
-    "swiper": "^11.1.9",
+    "styled-components": "^6.1.13",
+    "swiper": "^11.1.11",
     "tailwind-merge": "^2.2.2",
     "tailwindcss-animate": "^1.0.7",
     "three": "^0.167.1",

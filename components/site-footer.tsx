@@ -1,79 +1,52 @@
+"use client"
 import { DiscordLogoIcon, TwitterLogoIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import ServicesDropdown from "@/components/FooterComponents/ServicesDropdown";
 
 const footerNavs = [
   {
     label: "Product",
     items: [
-      {
-        href: "/",
-        name: "Email Collection",
-      },
-      {
-        href: "/pricing",
-        name: "Pricing",
-      },
-      {
-        href: "/faq",
-        name: "FAQ",
-      },
+      { href: "/", name: "Email Collection" },
+      { href: "/pricing", name: "Pricing" },
+      { href: "/faq", name: "FAQ" },
     ],
   },
-
   {
     label: "Community",
     items: [
-      {
-        href: "/",
-        name: "Discord",
-      },
-      {
-        href: "/",
-        name: "Twitter",
-      },
-      {
-        href: "mailto:hello@chatcollect.com",
-        name: "Email",
-      },
+      { href: "/", name: "Discord" },
+      { href: "/", name: "Twitter" },
+      { href: "mailto:hello@chatcollect.com", name: "Email" },
     ],
   },
   {
     label: "Legal",
     items: [
-      {
-        href: "/terms",
-        name: "Terms",
-      },
-
-      {
-        href: "/privacy",
-        name: "Privacy",
-      },
+      { href: "/terms", name: "Terms" },
+      { href: "/privacy", name: "Privacy" },
     ],
   },
 ];
 
 const footerSocials = [
-  {
-    href: "",
-    name: "Discord",
-    icon: <DiscordLogoIcon className="h-4 w-4" />,
-  },
-  {
-    href: "",
-    name: "Twitter",
-    icon: <TwitterLogoIcon className="h-4 w-4" />,
-  },
+  { href: "", name: "Discord", icon: <DiscordLogoIcon className="h-4 w-4" /> },
+  { href: "", name: "Twitter", icon: <TwitterLogoIcon className="h-4 w-4" /> },
 ];
 
 export function SiteFooter() {
+  const pathname = usePathname();
+
+  // Define the condition for the background color
+  const isReviewsPage = pathname === "/reviews";
+
   return (
-    <footer>
+    <footer className={isReviewsPage ? "bg-slate-950" : "bg-neutral-900"}>
       <div className="mx-auto w-full max-w-screen-xl xl:pb-2">
-        <div className="md:flex md:justify-between px-8 p-4   gap-4">
-          <div className=" flex-col flex gap-4">
+        <div className="md:flex md:justify-between px-8 p-4 gap-4">
+          <div className="flex-col flex gap-4">
             <Link href="/" className="flex items-center gap-1">
               <Image
                 src="/logo.webp"
@@ -112,7 +85,7 @@ export function SiteFooter() {
         </div>
         <ServicesDropdown />
 
-        <div className="flex flex-col sm:flex-row sm:flex sm:items-center sm:justify-between rounded-md border-neutral-700/20 py-4 px-8 gap-2">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between rounded-md border-neutral-700/20 py-4 px-8 gap-2">
           <div className="flex space-x-5 sm:justify-center sm:mt-0">
             {footerSocials.map((social) => (
               <Link
@@ -135,7 +108,7 @@ export function SiteFooter() {
           </span>
         </div>
       </div>
-      {/*   <SiteBanner /> */}
+      {/* <SiteBanner /> */}
     </footer>
   );
 }

@@ -12,6 +12,8 @@ import { SphereMask } from "@/components/magicui/sphere-mask";
 import SplineHero from "@/components/SplineComponents/SplineHero";
 import { HomeFeatures } from "@/components/HomePageComponents/HomeFeatures";
 import { Tools } from "@/components/AnimationComponents/Tools";
+import { BeamsWithCollision } from "@/components/AnimationComponents/BeamsWithCollision";
+import { FlipWordsDemo } from "@/components/AnimationComponents/FlipWordsDemo";
 
 export default async function Page() {
   return (
@@ -22,8 +24,6 @@ export default async function Page() {
       <HomeFeatures />  
       <ClientSection />
       <SphereMask />
-      {/* <BentoDemo /> */}
-      {/* <TabsDemo /> */}
       <Tools />
       <PerformanceStats />
       <Marketing />

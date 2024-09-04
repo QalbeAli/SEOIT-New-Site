@@ -8,18 +8,21 @@ import { ServiceHeroAnimation } from "@/components/ServicesPageComponents/Servic
 import { SphereMask } from "@/components/magicui/sphere-mask";
 
 import React from "react";
+import { MacbookScroll } from "@/components/macbook";
+import HeadingSection from "@/components/ServicesPageComponents/HeadingSection";
 
 const Services = () => {
   return (
     <>
-      <ServiceHeroAnimation />
+      <HeadingSection />
+      <MacbookScroll src={`/dashboard.png`} showGradient={true} />
+      {/* <ServiceHeroAnimation /> */}
       <SphereMask />
       <ServicesIconCloud />
       <ServicesGrid />
       <Clients />
       <ClientSection />
       <CallToActionService />
-
     </>
   );
 };
