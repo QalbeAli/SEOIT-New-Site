@@ -19,8 +19,8 @@ export default async function Page() {
   return (
     <>
       <AnimatedGradientTextDemo />
-      {/* <SplineHero /> */}
       <HeroSection />
+      <SplineHero />
       <HomeFeatures />  
       <ClientSection />
       <SphereMask />

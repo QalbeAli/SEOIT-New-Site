@@ -10,14 +10,8 @@ export default function SplineHero() {
   return (
     <div>
       <main className="">
-        <div className=" transform translate-y-[500px]  h-[40rem] flex justify-center items-center z-50 px-4">
-          <div className=" text-4xl mx-auto font-normal  dark:text-white">
-            Build
-            <FlipWords words={words} /> <br />
-            websites with Aceternity UI
-          </div>
-        </div>
-        <Spline scene="https://prod.spline.design/BImIErcJVO1nUO9F/scene.splinecode" />
+        <div className="flex justify-center items-center text-4xl mt-36 font-bold">A FUN For YOU!</div>
+        <Spline className="my-10 px-2 "  scene="https://prod.spline.design/Rd1xjsHQOHK6f21j/scene.splinecode" />
       </main>
     </div>
   );
